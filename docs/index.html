@@ -4,12 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-  <!-- ───────────────────────────────────────────────────────────────────────
-       NOTE: this page is served from GitHub Pages. If your Pages URL is not
-       https://muhammaduazir69.github.io/aeroscope.live/ , find-and-replace that base
-       in the <link rel="canonical">, the og:url, and sitemap.xml.
-       ─────────────────────────────────────────────────────────────────────── -->
-
+  <!-- Pages URL: https://muhammaduazir69.github.io/aeroscope.live/ -->
   <title>AeroScope — Observer-Relative Airspace Intelligence from Crowdsourced ADS-B</title>
   <meta name="description" content="AeroScope fuses 60+ public ADS-B feeds into a real-time, explainable picture of the aircraft over a chosen point — who they are, how they behave, which deserve attention. Ships an open ADS-B anomaly benchmark and a torch-free consensus detector built on established libraries."/>
   <meta name="keywords" content="ADS-B, airspace intelligence, flight tracking, anomaly detection, ADS-B spoofing, aviation surveillance, open dataset, anomaly benchmark, drone detection, observer-relative, real-time radar"/>
@@ -17,7 +12,6 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
   <link rel="canonical" href="https://muhammaduazir69.github.io/aeroscope.live/"/>
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="AeroScope"/>
   <meta property="og:title" content="AeroScope — Observer-Relative Airspace Intelligence from Crowdsourced ADS-B"/>
@@ -26,8 +20,6 @@
   <meta property="og:image" content="https://aeroscope.live/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="AeroScope — Observer-Relative Airspace Intelligence"/>
   <meta name="twitter:description" content="Real-time airspace intelligence from 60+ ADS-B feeds + an open anomaly-detection benchmark. Built on established libraries, no torch, no RL."/>
@@ -38,578 +30,597 @@
   <link rel="apple-touch-icon" sizes="180x180" href="https://aeroscope.live/apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 
-  <!-- ── Structured data: the software platform ── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AeroScope",
-    "url": "https://aeroscope.live",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Any (web)",
-    "description": "Observer-relative airspace-intelligence platform. Fuses 60+ public ADS-B feeds into a real-time, explainable view of aircraft over a chosen location, with rule-based attention scoring, a torch-free consensus anomaly detector, DO-260B integrity checks, and an open anomaly-detection benchmark.",
-    "author": {
-      "@type": "Person",
-      "name": "Muhammad Uzair",
-      "affiliation": { "@type": "CollegeOrUniversity", "name": "COMSATS University Islamabad" },
-      "identifier": "https://orcid.org/0009-0002-4104-2680"
-    },
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  }
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AeroScope","url":"https://aeroscope.live","applicationCategory":"SecurityApplication","operatingSystem":"Any (web)","description":"Observer-relative airspace-intelligence platform. Fuses 60+ public ADS-B feeds into a real-time, explainable view of aircraft over a chosen location, with rule-based attention scoring, a torch-free consensus anomaly detector, DO-260B integrity checks, and an open anomaly-detection benchmark.","author":{"@type":"Person","name":"Muhammad Uzair","affiliation":{"@type":"CollegeOrUniversity","name":"COMSATS University Islamabad"},"identifier":"https://orcid.org/0009-0002-4104-2680"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
-
-  <!-- ── Structured data: the open dataset ── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "AeroScope ADS-B Anomaly Benchmark v1",
-    "description": "A free, citable benchmark for evaluating ADS-B anomaly and spoofing detectors. Pairs real airborne traffic captured from crowdsourced receiver feeds (multi-region, deduplicated by ICAO 24-bit address) with synthetically injected attacks following the standard ADS-B security taxonomy — altitude tampering, velocity tampering, ghost kinematics, integrity-field downgrade. 38 documented columns including NIC/NACp/NACv/SIL integrity fields and derived self-consistency features.",
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "creator": {
-      "@type": "Person",
-      "name": "Muhammad Uzair",
-      "identifier": "https://orcid.org/0009-0002-4104-2680"
-    },
-    "keywords": ["ADS-B", "anomaly detection", "spoofing", "aviation security", "benchmark"],
-    "distribution": [
-      { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.csv" },
-      { "@type": "DataDownload", "encodingFormat": "application/x-ndjson", "contentUrl": "https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.jsonl" }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Dataset","name":"AeroScope ADS-B Anomaly Benchmark v1","description":"A free, citable benchmark for evaluating ADS-B anomaly and spoofing detectors. Pairs real airborne traffic captured from crowdsourced receiver feeds (multi-region, deduplicated by ICAO 24-bit address) with synthetically injected attacks following the standard ADS-B security taxonomy. 38 documented columns including NIC/NACp/NACv/SIL integrity fields and derived self-consistency features.","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Muhammad Uzair","identifier":"https://orcid.org/0009-0002-4104-2680"},"keywords":["ADS-B","anomaly detection","spoofing","aviation security","benchmark"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.csv"},{"@type":"DataDownload","encodingFormat":"application/x-ndjson","contentUrl":"https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.jsonl"}]}
   </script>
-
-  <!-- ── Structured data: FAQ (helps AI assistants + rich results) ── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What is AeroScope?",
-        "acceptedAnswer": { "@type": "Answer", "text": "AeroScope is an observer-relative airspace-intelligence platform. It ingests aircraft positions from 60+ public ADS-B feeds, fuses and de-duplicates them, and presents a real-time, explainable picture of the aircraft over a chosen point on Earth — their identity, behaviour, signal integrity, and which ones warrant a second look. It also publishes an open ADS-B anomaly-detection benchmark." } },
-      { "@type": "Question", "name": "Does AeroScope use deep learning or reinforcement learning?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. The anomaly layer is deliberately torch-free and uses established libraries: River for streaming detection, scikit-learn IsolationForest as a baseline, pykalman for trajectory innovation, OpenAP for flight-envelope checks, stumpy for matrix-profile pattern analysis, and PyOD for a second opinion. An aircraft is flagged only when at least two detectors agree. There is no reinforcement learning; an earlier RL prototype was retired." } },
-      { "@type": "Question", "name": "Is the threat score an accusation?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. It is a 0-100 attention-ranker that sorts a busy list, computed from eight weighted rule-based factors (military hex range, squawk, integrity, envelope, proximity, missing identity, pattern, signal quality). The contributing factors are always shown. It tells an operator where to look first; it does not pass judgement." } },
-      { "@type": "Question", "name": "What is the AeroScope ADS-B Anomaly Benchmark?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A free CC-BY 4.0 dataset for evaluating ADS-B anomaly and spoofing detectors. It pairs real airborne traffic with synthetically injected attacks following the taxonomy in the ADS-B security literature, across 38 documented columns. The bundled scikit-learn IsolationForest baseline measured ROC-AUC of about 0.87. Limitations (synthetic injection, terminal-area bias, sparse enhanced-surveillance fields) are documented in the dataset card." } },
-      { "@type": "Question", "name": "Where can I try it?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The live platform runs at https://aeroscope.live. The open benchmark dataset and column reference are linked from the research section." } }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is AeroScope?","acceptedAnswer":{"@type":"Answer","text":"AeroScope is an observer-relative airspace-intelligence platform. It ingests aircraft positions from 60+ public ADS-B feeds, fuses and de-duplicates them, and presents a real-time, explainable picture of the aircraft over a chosen point on Earth — their identity, behaviour, signal integrity, and which ones warrant a second look. It also publishes an open ADS-B anomaly-detection benchmark."}},
+    {"@type":"Question","name":"Does AeroScope use deep learning or reinforcement learning?","acceptedAnswer":{"@type":"Answer","text":"No. The anomaly layer is deliberately torch-free and uses established libraries: River for streaming detection, scikit-learn IsolationForest as a baseline, pykalman for trajectory innovation, OpenAP for flight-envelope checks, stumpy for matrix-profile pattern analysis, and PyOD for a second opinion. An aircraft is flagged only when at least two detectors agree. There is no reinforcement learning; an earlier RL prototype was retired."}},
+    {"@type":"Question","name":"Is the threat score an accusation?","acceptedAnswer":{"@type":"Answer","text":"No. It is a 0-100 attention-ranker that sorts a busy list, computed from eight weighted rule-based factors. The contributing factors are always shown. It tells an operator where to look first; it does not pass judgement."}},
+    {"@type":"Question","name":"What is the AeroScope ADS-B Anomaly Benchmark?","acceptedAnswer":{"@type":"Answer","text":"A free CC-BY 4.0 dataset for evaluating ADS-B anomaly and spoofing detectors. It pairs real airborne traffic with synthetically injected attacks following the taxonomy in the ADS-B security literature, across 38 documented columns. The bundled scikit-learn IsolationForest baseline measured ROC-AUC of about 0.87. Limitations are documented in the dataset card."}},
+    {"@type":"Question","name":"Where can I try it?","acceptedAnswer":{"@type":"Answer","text":"The live platform runs at https://aeroscope.live. The open benchmark dataset and column reference are linked from the research section."}}
+  ]}
   </script>
 
   <style>
+    :root{
+      --bg:#070912; --bg2:#0b0e1c; --panel:rgba(20,24,42,0.55); --panel-solid:#11142a;
+      --ink:#edeef6; --muted:#9197b4; --faint:#666c8a; --line:rgba(255,255,255,0.08);
+      --amber:#ffb454; --orange:#ff7a2f; --violet:#9a7bff; --violet-deep:#6d4dff; --mint:#5cf2a8;
+      --grad:linear-gradient(110deg,#ffc46b,#ff7a2f 45%,#9a7bff);
+      --display:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace; --body:'Inter',sans-serif;
+      --rad:14px;
+    }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#020617;color:#e2e8f0;font-family:'JetBrains Mono',monospace;line-height:1.7;overflow-x:hidden}
-    a{color:#22d3ee;text-decoration:none}a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:var(--amber);text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+    h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-0.01em;line-height:1.12}
+    .mono{font-family:var(--mono)}
+    .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
-    /* NAV */
-    nav{background:rgba(10,22,40,0.97);border-bottom:1px solid rgba(34,211,238,0.08);padding:12px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
-    nav .inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    nav .brand{font-family:'Orbitron',monospace;font-size:18px;font-weight:900;background:linear-gradient(135deg,#22d3ee,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    nav .links{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-    nav .links a{font-size:12px;color:#94a3b8;transition:color 0.2s}
-    nav .links a:hover{color:#22d3ee;text-decoration:none}
-    .launch-btn{padding:6px 16px;font-size:11px;border-radius:4px;border:1px solid #22d3ee;background:rgba(34,211,238,0.1);color:#22d3ee;font-family:'Orbitron',monospace;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all 0.2s;text-decoration:none!important}
-    .launch-btn:hover{background:rgba(34,211,238,0.2)}
+    /* ── ANIMATED AURORA BACKGROUND ── */
+    .aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+      radial-gradient(1200px 800px at 80% -10%, rgba(109,77,255,0.12), transparent 60%),
+      radial-gradient(1000px 700px at -10% 20%, rgba(255,122,47,0.10), transparent 55%),
+      var(--bg)}
+    .aurora span{position:absolute;border-radius:50%;filter:blur(70px);opacity:0.5;mix-blend-mode:screen}
+    .aurora .a1{width:560px;height:560px;background:radial-gradient(circle,#ff7a2f,transparent 60%);top:-120px;left:8%;animation:drift1 26s ease-in-out infinite}
+    .aurora .a2{width:620px;height:620px;background:radial-gradient(circle,#6d4dff,transparent 62%);top:30%;right:-140px;animation:drift2 32s ease-in-out infinite}
+    .aurora .a3{width:480px;height:480px;background:radial-gradient(circle,#ffb454,transparent 60%);bottom:-160px;left:30%;animation:drift3 30s ease-in-out infinite}
+    @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,80px) scale(1.15)}}
+    @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-90px,40px) scale(1.1)}}
+    @keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-70px) scale(1.2)}}
+    .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.5;
+      background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+      background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, #000 30%, transparent 80%)}
 
-    /* PARTICLES */
-    .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
-    .particle{position:absolute;width:2px;height:2px;background:#22d3ee;border-radius:50%;opacity:0;animation:particleFloat linear infinite}
-    .particle:nth-child(1){left:10%;animation-duration:18s;animation-delay:0s}
-    .particle:nth-child(2){left:25%;animation-duration:22s;animation-delay:3s}
-    .particle:nth-child(3){left:40%;animation-duration:16s;animation-delay:1s}
-    .particle:nth-child(4){left:55%;animation-duration:20s;animation-delay:5s}
-    .particle:nth-child(5){left:70%;animation-duration:24s;animation-delay:2s}
-    .particle:nth-child(6){left:85%;animation-duration:19s;animation-delay:4s}
-    .particle:nth-child(7){left:15%;animation-duration:21s;animation-delay:6s}
-    .particle:nth-child(8){left:60%;animation-duration:17s;animation-delay:7s}
-    .particle:nth-child(9){left:35%;animation-duration:23s;animation-delay:1.5s}
-    .particle:nth-child(10){left:90%;animation-duration:15s;animation-delay:3.5s}
-    .particle:nth-child(11){left:5%;animation-duration:20s;animation-delay:8s}
-    .particle:nth-child(12){left:75%;animation-duration:18s;animation-delay:0.5s}
-    @keyframes particleFloat{0%{transform:translateY(110vh);opacity:0}10%{opacity:0.4}90%{opacity:0.4}100%{transform:translateY(-10vh);opacity:0}}
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(7,9,18,0.6);border-bottom:1px solid var(--line)}
+    nav .inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 22px;max-width:1180px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:0.02em}
+    .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--grad);display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(255,122,47,0.4)}
+    .brand .mark svg{width:15px;height:15px}
+    .nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .nav-links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .2s}
+    .nav-links a:hover{color:var(--ink)}
+    .btn{display:inline-block;font-family:var(--mono);font-weight:500;font-size:13px;padding:10px 18px;border-radius:9px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;text-decoration:none}
+    .btn-primary{background:var(--grad);color:#0a0a12;font-weight:600;box-shadow:0 6px 24px rgba(255,122,47,0.28)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,122,47,0.4)}
+    .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,0.02)}
+    .btn-ghost:hover{border-color:rgba(255,180,84,0.5);background:rgba(255,180,84,0.06)}
 
-    /* SCROLL ANIMATIONS */
-    .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-    .fade-in.visible{opacity:1;transform:translateY(0)}
+    /* ── HERO ── */
+    .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+    #globe{position:absolute;top:50%;right:-6%;transform:translateY(-50%);width:760px;height:760px;max-width:62vw;z-index:0;opacity:0.95}
+    .hero-content{position:relative;z-index:2;max-width:660px;padding:60px 0}
+    .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:0.12em;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:7px 14px;margin-bottom:26px;background:rgba(255,255,255,0.02)}
+    .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:blink 2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.35}}
+    .hero h1{font-size:clamp(38px,6.4vw,76px);letter-spacing:-0.03em;margin-bottom:18px}
+    .hero h1 .sub{display:block;font-size:clamp(15px,2.1vw,21px);font-family:var(--mono);font-weight:400;letter-spacing:0.02em;color:var(--muted);margin-top:14px;line-height:1.5}
+    .hero p.lead{font-size:16px;color:var(--muted);max-width:560px;margin:22px 0 32px;line-height:1.85}
+    .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+    .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--faint);text-align:center}
+    .scroll-hint .line{width:1px;height:34px;margin:8px auto 0;background:linear-gradient(var(--amber),transparent);animation:scrolldot 2s ease-in-out infinite}
+    @keyframes scrolldot{0%{opacity:0;transform:scaleY(0.3)}50%{opacity:1}100%{opacity:0;transform:scaleY(1) translateY(8px)}}
 
-    /* HERO */
-    .hero{position:relative;padding:96px 0 56px;text-align:center;z-index:1}
-    .hero-radar{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);width:380px;height:380px;opacity:0.10;pointer-events:none}
-    .hero .eyebrow{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:3px;color:#64748b;margin-bottom:18px;position:relative;z-index:1}
-    .hero h1{font-family:'Orbitron',monospace;font-size:clamp(26px,5vw,52px);font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,#22d3ee,#3b82f6,#8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;position:relative;z-index:1}
-    .hero .tagline{font-family:'Orbitron',monospace;font-size:clamp(13px,2vw,16px);color:#e2e8f0;letter-spacing:1px;margin-bottom:20px;position:relative;z-index:1}
-    .hero p{font-size:14px;color:#94a3b8;max-width:730px;margin:0 auto 30px;line-height:1.9;position:relative;z-index:1}
-    .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-    .btn{padding:11px 22px;font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:1px;border-radius:5px;cursor:pointer;transition:all 0.2s;text-decoration:none!important;display:inline-block}
-    .btn-primary{background:linear-gradient(135deg,#22d3ee,#3b82f6);color:#020617;border:1px solid transparent}
-    .btn-primary:hover{filter:brightness(1.12);transform:translateY(-2px)}
-    .btn-ghost{background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.3);color:#22d3ee}
-    .btn-ghost:hover{background:rgba(34,211,238,0.16)}
+    /* ── MARQUEE ── */
+    .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,0.015);overflow:hidden;padding:16px 0}
+    .marquee .track{display:flex;gap:46px;width:max-content;animation:scrollx 34s linear infinite;align-items:center}
+    .marquee:hover .track{animation-play-state:paused}
+    .marquee .chip{font-family:var(--mono);font-size:13px;color:var(--faint);white-space:nowrap;letter-spacing:0.04em}
+    .marquee .chip b{color:var(--muted);font-weight:500}
+    @keyframes scrollx{to{transform:translateX(-50%)}}
 
-    /* STAT BAR */
-    .stat-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:10px 0 50px}
-    .stat-card{text-align:center;padding:26px 14px;border-radius:10px;background:rgba(15,23,42,0.35);border:1px solid rgba(34,211,238,0.1);backdrop-filter:blur(12px);transition:border-color 0.3s,transform 0.3s}
-    .stat-card:hover{border-color:rgba(34,211,238,0.3);transform:translateY(-3px)}
-    .stat-card .num{font-family:'Orbitron',monospace;font-size:26px;font-weight:900;background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .stat-card .label{font-size:11px;color:#94a3b8;margin-top:6px;letter-spacing:0.5px;line-height:1.5}
+    /* ── SECTIONS ── */
+    section{position:relative;padding:84px 0}
+    .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.26em;color:var(--orange);margin-bottom:14px;text-transform:uppercase}
+    .h2{font-size:clamp(26px,4vw,42px);letter-spacing:-0.025em;margin-bottom:16px}
+    .lead2{font-size:15px;color:var(--muted);max-width:680px;line-height:1.85;margin-bottom:8px}
 
-    /* SECTIONS */
-    .section{padding:48px 0;position:relative;z-index:1}
-    .section .kicker{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;color:#64748b;margin-bottom:8px}
-    .section h2{font-family:'Orbitron',monospace;font-size:clamp(16px,2.4vw,22px);color:#22d3ee;letter-spacing:1.5px;margin-bottom:12px}
-    .section .subtitle{font-size:13px;color:#94a3b8;margin-bottom:28px;max-width:760px;line-height:1.85}
-    .section p{font-size:13px;color:#94a3b8;margin-bottom:12px;line-height:1.85}
-    .section p strong{color:#cbd5e1}
-    .divider{height:1px;background:linear-gradient(90deg,transparent,#1e293b,transparent);margin:8px 0}
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+    .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
 
-    /* FEATURE / CARD GRID */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
-    .card{background:rgba(15,23,42,0.5);border:1px solid #1e293b;border-radius:8px;padding:24px;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s}
-    .card:hover{border-color:rgba(34,211,238,0.4);transform:translateY(-3px);box-shadow:0 0 24px rgba(34,211,238,0.07)}
-    .card .ico{font-size:24px;margin-bottom:12px;display:block}
-    .card h3{font-family:'Orbitron',monospace;font-size:12px;color:#e2e8f0;letter-spacing:0.8px;margin-bottom:8px}
-    .card p{font-size:12px;color:#94a3b8;line-height:1.7;margin:0}
-    .card .tag{display:inline-block;margin-top:12px;font-family:'Orbitron',monospace;font-size:9px;letter-spacing:1px;color:#22d3ee;border:1px solid rgba(34,211,238,0.2);border-radius:3px;padding:2px 8px}
+    /* ── STATS / BENTO ── */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+    .stat{padding:26px 20px;border-radius:var(--rad);border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px)}
+    .stat .n{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;letter-spacing:-0.02em}
+    .stat .l{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.5}
 
-    /* PIPELINE */
-    .pipeline{display:flex;align-items:flex-start;gap:0;flex-wrap:wrap;justify-content:center;margin:30px 0}
-    .pipeline-step{flex:0 0 170px;text-align:center;position:relative;padding:18px 10px}
-    .pipeline-step .step-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#22d3ee,#3b82f6);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Orbitron',monospace;font-weight:900;font-size:14px;color:#020617}
-    .pipeline-step h4{font-family:'Orbitron',monospace;font-size:11px;color:#e2e8f0;letter-spacing:1px;margin-bottom:6px}
-    .pipeline-step p{font-size:11px;color:#64748b;line-height:1.55;margin:0}
-    .pipeline-connector{flex:0 0 36px;display:flex;align-items:center;justify-content:center;padding-top:26px}
-    .pipeline-connector svg{width:30px;height:20px}
-    .connector-line{stroke:#22d3ee;stroke-width:2;stroke-dasharray:6 3;animation:dashMove 1s linear infinite}
-    @keyframes dashMove{to{stroke-dashoffset:-9}}
+    /* ── TILT CARD GRID ── */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:36px}
+    .card{position:relative;border-radius:18px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px);padding:28px;transition:transform .18s cubic-bezier(.2,.7,.2,1),border-color .3s;transform-style:preserve-3d;overflow:hidden}
+    .card::after{content:'';position:absolute;inset:0;border-radius:18px;background:radial-gradient(360px circle at var(--gx,50%) var(--gy,0%),rgba(255,180,84,0.10),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+    .card:hover{border-color:rgba(255,180,84,0.32)}
+    .card:hover::after{opacity:1}
+    .card .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(255,180,84,0.10);border:1px solid rgba(255,180,84,0.18);margin-bottom:16px}
+    .card h3{font-size:16px;margin-bottom:9px;letter-spacing:-0.01em}
+    .card p{font-size:13.5px;color:var(--muted);line-height:1.72}
+    .card .tag{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--amber);border:1px solid rgba(255,180,84,0.2);border-radius:6px;padding:3px 9px}
 
-    /* THREAT GAUGE */
-    .gauge-wrap{display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center;margin-top:10px}
-    .gauge{position:relative;width:220px;height:128px;overflow:hidden;flex-shrink:0}
-    .gauge-bg{width:220px;height:110px;border-radius:110px 110px 0 0;background:conic-gradient(from 180deg at 50% 100%,#10b981 0deg,#10b981 54deg,#f59e0b 54deg,#f59e0b 108deg,#ef4444 108deg,#ef4444 180deg)}
-    .gauge-mask{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;height:80px;border-radius:80px 80px 0 0;background:#020617}
-    .gauge-needle{position:absolute;bottom:18px;left:50%;width:3px;height:90px;background:linear-gradient(to top,#e2e8f0,transparent);transform-origin:bottom center;transform:rotate(-70deg);transition:transform 1.5s cubic-bezier(0.34,1.56,0.64,1);border-radius:2px}
-    .gauge-center{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:#e2e8f0;border:2px solid #020617}
-    .gauge-score{position:absolute;bottom:-2px;left:0;width:100%;text-align:center;font-family:'Orbitron',monospace;font-size:26px;font-weight:900;color:#10b981}
-    .gauge-legend{font-size:11px;color:#94a3b8;max-width:340px;line-height:1.8}
-    .gauge-legend .row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
-    .gauge-legend .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    /* ── SHOWCASE ── */
+    .showcase{margin-top:38px;border-radius:18px;border:1px solid var(--line);background:var(--panel);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+    .showcase .bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,0.02)}
+    .showcase .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+    .showcase .bar .u{margin-left:14px;font-family:var(--mono);font-size:12px;color:var(--faint)}
+    .showcase img{display:block;width:100%;height:auto}
+    .showcase .cap{padding:16px 20px;font-family:var(--mono);font-size:12px;color:var(--muted);border-top:1px solid var(--line);text-align:center}
 
-    /* FACTOR BARS */
-    .factors{margin-top:22px}
-    .factor{margin-bottom:12px}
-    .factor .flabel{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
-    .factor .flabel span:first-child{color:#cbd5e1}
-    .factor .flabel span:last-child{color:#22d3ee;font-family:'Orbitron',monospace}
-    .ftrack{height:6px;background:#0f172a;border-radius:3px;overflow:hidden}
-    .ffill{height:100%;border-radius:3px;width:0;background:linear-gradient(90deg,#22d3ee,#3b82f6);transition:width 1.2s ease}
-    .factors.visible .ffill{width:var(--w)}
+    /* ── PIPELINE ── */
+    .pipe{display:flex;gap:0;flex-wrap:wrap;justify-content:center;align-items:stretch;margin-top:36px}
+    .pstep{flex:1 1 170px;min-width:160px;padding:22px 16px;border-radius:14px;border:1px solid var(--line);background:var(--panel);margin:6px;position:relative;transition:transform .25s,border-color .3s}
+    .pstep:hover{transform:translateY(-4px);border-color:rgba(154,123,255,0.35)}
+    .pstep .num{font-family:var(--mono);font-size:11px;color:var(--violet);letter-spacing:0.1em}
+    .pstep h4{font-size:14px;margin:8px 0 6px}
+    .pstep p{font-size:12px;color:var(--muted);line-height:1.6}
+    .pstep .arrow{position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--faint);font-size:16px;z-index:2}
+    .pstep:last-child .arrow{display:none}
+    .wave{margin-top:30px;width:100%;height:70px}
+    .wave path{fill:none;stroke:url(#wgrad);stroke-width:2;stroke-dasharray:7 6;animation:dashflow 1.4s linear infinite}
+    @keyframes dashflow{to{stroke-dashoffset:-26}}
 
-    /* DATASET / CODE */
-    .panel{background:rgba(15,23,42,0.55);border:1px solid #1e293b;border-radius:8px;padding:26px;margin-top:22px}
-    .panel h3{font-family:'Orbitron',monospace;font-size:13px;color:#22d3ee;letter-spacing:1px;margin-bottom:12px}
-    code{background:#0a1628;border:1px solid #1e3a5f;border-radius:3px;padding:2px 6px;font-size:12px;color:#22d3ee}
-    pre{background:#0a1628;border:1px solid #1e3a5f;border-radius:6px;padding:16px;overflow-x:auto;margin:14px 0;font-size:12px;line-height:1.7}
-    pre code{border:none;padding:0;color:#cbd5e1}
-    .cite{background:rgba(15,23,42,0.5);border-left:2px solid #22d3ee;border-radius:0 6px 6px 0;padding:16px 18px;margin:16px 0;font-size:12px;color:#94a3b8;line-height:1.9}
-    .limit{font-size:12px;color:#64748b;line-height:1.8;margin-top:10px}
-    .limit strong{color:#f59e0b}
+    /* ── GAUGE ── */
+    .gwrap{display:flex;gap:40px;flex-wrap:wrap;align-items:center;margin-top:30px}
+    .gauge{position:relative;width:230px;height:134px;overflow:hidden;flex-shrink:0}
+    .gauge .bg{width:230px;height:115px;border-radius:115px 115px 0 0;background:conic-gradient(from 180deg at 50% 100%,var(--mint) 0deg,var(--mint) 50deg,var(--amber) 50deg,var(--amber) 108deg,var(--orange) 108deg,#ff4d4d 180deg)}
+    .gauge .mask{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:168px;height:84px;border-radius:84px 84px 0 0;background:var(--bg)}
+    .gauge .needle{position:absolute;bottom:19px;left:50%;width:3px;height:95px;background:linear-gradient(to top,#fff,transparent);transform-origin:bottom center;transform:rotate(-72deg);transition:transform 1.4s cubic-bezier(0.34,1.56,0.64,1);border-radius:2px}
+    .gauge .hub{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:#fff;border:2px solid var(--bg)}
+    .gauge .val{position:absolute;bottom:-2px;width:100%;text-align:center;font-family:var(--display);font-weight:700;font-size:30px;color:var(--mint)}
+    .glegend{font-size:13px;color:var(--muted);max-width:360px;line-height:1.85}
+    .glegend .r{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+    .glegend .d{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    .factors{margin-top:26px;max-width:680px}
+    .factor{margin-bottom:13px}
+    .factor .fl{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;font-family:var(--mono)}
+    .factor .fl span:first-child{color:var(--ink)} .factor .fl span:last-child{color:var(--amber)}
+    .ftrack{height:7px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden}
+    .ffill{height:100%;border-radius:4px;width:0;background:var(--grad);transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+    .factors.in .ffill{width:var(--w)}
 
-    /* ROADMAP */
-    .roadmap{margin-top:24px;position:relative;padding-left:24px}
-    .roadmap::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,#22d3ee,#3b82f6,#8b5cf6)}
-    .road-item{position:relative;margin-bottom:22px;padding-left:18px}
-    .road-item::before{content:'';position:absolute;left:-23px;top:4px;width:12px;height:12px;border-radius:50%;background:#020617;border:2px solid #22d3ee}
-    .road-item.done::before{background:#22d3ee}
-    .road-item h4{font-family:'Orbitron',monospace;font-size:12px;color:#e2e8f0;letter-spacing:0.8px;margin-bottom:4px}
-    .road-item .when{font-family:'Orbitron',monospace;font-size:9px;letter-spacing:1px;color:#64748b;margin-bottom:6px}
-    .road-item p{font-size:12px;color:#94a3b8;margin:0;line-height:1.7}
-    .badge-done{color:#10b981}.badge-now{color:#22d3ee}.badge-next{color:#8b5cf6}
+    /* ── PANEL / CODE ── */
+    .panel{border-radius:18px;border:1px solid var(--line);background:var(--panel);padding:30px;margin-top:30px;backdrop-filter:blur(10px)}
+    .panel h3{font-size:18px;margin-bottom:12px}
+    code{font-family:var(--mono);background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:5px;padding:2px 6px;font-size:12.5px;color:var(--amber)}
+    pre{font-family:var(--mono);background:#0a0c18;border:1px solid var(--line);border-radius:11px;padding:18px;overflow-x:auto;margin:16px 0;font-size:12.5px;line-height:1.75}
+    pre code{border:none;padding:0;background:none;color:#c7cbe6}
+    .pre-cmt{color:#5f6890}.pre-k{color:var(--violet)}.pre-s{color:var(--mint)}
+    .cite{border-left:2px solid var(--amber);background:rgba(255,180,84,0.05);border-radius:0 10px 10px 0;padding:16px 18px;margin:18px 0;font-size:12.5px;color:var(--muted);line-height:1.9}
+    .limit{font-size:12.5px;color:var(--faint);line-height:1.85;margin-top:12px}.limit b{color:var(--amber)}
+    .dl{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
 
-    /* BACKING */
-    .backing{background:linear-gradient(135deg,rgba(34,211,238,0.05),rgba(139,92,246,0.05));border:1px solid rgba(34,211,238,0.18);border-radius:12px;padding:38px 30px;margin-top:24px;text-align:center}
-    .backing h3{font-family:'Orbitron',monospace;font-size:16px;color:#e2e8f0;letter-spacing:1px;margin-bottom:14px}
-    .backing p{font-size:13px;color:#94a3b8;max-width:680px;margin:0 auto 14px;line-height:1.9}
-    .backing .who{font-size:12px;color:#64748b;margin-top:18px;line-height:1.8}
-    .backing .who a{color:#22d3ee}
+    /* ── TIMELINE ── */
+    .timeline{margin-top:34px;position:relative;padding-left:30px}
+    .timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--amber),var(--orange),var(--violet))}
+    .ti{position:relative;margin-bottom:26px;padding-left:18px}
+    .ti::before{content:'';position:absolute;left:-30px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--faint)}
+    .ti.done::before{border-color:var(--mint);background:var(--mint);box-shadow:0 0 12px rgba(92,242,168,0.5)}
+    .ti.now::before{border-color:var(--amber);box-shadow:0 0 12px rgba(255,180,84,0.5)}
+    .ti .when{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;margin-bottom:5px}
+    .ti.done .when{color:var(--mint)}.ti.now .when{color:var(--amber)}.ti .when{color:var(--violet)}
+    .ti h4{font-size:15px;margin-bottom:5px}.ti p{font-size:13px;color:var(--muted);line-height:1.7}
 
-    /* FAQ */
-    details{background:rgba(15,23,42,0.5);border:1px solid #1e293b;border-radius:6px;margin-bottom:10px;transition:border-color 0.3s}
-    details:hover{border-color:rgba(34,211,238,0.2)}
-    details[open]{border-color:rgba(34,211,238,0.15)}
-    summary{font-family:'Orbitron',monospace;font-size:12px;letter-spacing:0.5px;color:#e2e8f0;padding:16px 20px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+    /* ── BACKING ── */
+    .backing{border-radius:22px;border:1px solid rgba(255,180,84,0.2);background:linear-gradient(135deg,rgba(255,122,47,0.08),rgba(109,77,255,0.08));padding:46px 34px;margin-top:34px;text-align:center;position:relative;overflow:hidden}
+    .backing::before{content:'';position:absolute;inset:-2px;background:radial-gradient(600px circle at 50% -20%,rgba(255,180,84,0.18),transparent 60%);pointer-events:none}
+    .backing h3{font-size:24px;margin-bottom:14px;position:relative}
+    .backing p{font-size:14px;color:var(--muted);max-width:680px;margin:0 auto 14px;line-height:1.9;position:relative}
+    .backing .who{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:20px;line-height:1.9;position:relative}
+    .backing .who a{color:var(--amber)}
+
+    /* ── FAQ ── */
+    details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:11px;transition:border-color .3s}
+    details[open]{border-color:rgba(154,123,255,0.3)}
+    summary{font-family:var(--display);font-weight:500;font-size:14.5px;padding:18px 22px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
     summary::-webkit-details-marker{display:none}
-    summary::after{content:'+';font-size:16px;color:#22d3ee;transition:transform 0.2s}
+    summary::after{content:'+';font-family:var(--mono);font-size:18px;color:var(--amber);transition:transform .25s}
     details[open] summary::after{content:'\2013'}
-    details .answer{padding:0 20px 16px;font-size:12px;color:#94a3b8;line-height:1.85}
+    details .a{padding:0 22px 18px;font-size:13.5px;color:var(--muted);line-height:1.85}
 
-    /* FOOTER */
-    footer{border-top:1px solid #1e293b;padding:42px 0;margin-top:50px;position:relative;z-index:1}
-    footer .inner{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
-    footer .col h4{font-family:'Orbitron',monospace;font-size:10px;color:#22d3ee;letter-spacing:1.5px;margin-bottom:12px}
-    footer .col a{display:block;font-size:12px;color:#64748b;margin-bottom:6px}
-    footer .col a:hover{color:#22d3ee}
-    footer .bottom{text-align:center;padding-top:28px;font-size:11px;color:#334155;line-height:1.8}
+    /* ── FOOTER ── */
+    footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:40px}
+    .fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px}
+    .fcol h5{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;color:var(--orange);margin-bottom:14px}
+    .fcol a{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}.fcol a:hover{color:var(--ink)}
+    .fbottom{margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--faint);line-height:1.9;text-align:center}
 
-    @media(max-width:768px){
-      .stat-bar{grid-template-columns:1fr 1fr}
-      .hero{padding:60px 0 30px}
-      nav .links{gap:10px}nav .links a{font-size:11px}
-      .pipeline-connector{display:none}
-      footer .inner{flex-direction:column}
+    @media(max-width:860px){
+      #globe{right:-30%;opacity:0.5;max-width:100vw}
+      .hero-content{padding:90px 0 40px}
+      .stats{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .pstep .arrow{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .aurora span,.marquee .track,.pill .dot,.wave path{animation:none}
     }
   </style>
 </head>
 <body>
-
-  <!-- PARTICLES -->
-  <div class="particles" aria-hidden="true">
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-  </div>
+  <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="grid-bg" aria-hidden="true"></div>
 
   <nav>
     <div class="inner">
-      <a href="#top" class="brand">AEROSCOPE</a>
-      <div class="links">
-        <a href="#what">What</a>
+      <a href="#top" class="brand">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="#0a0a12"><path d="M12 2L8 10H3L5 13H8L10 22H14L16 13H19L21 10H16L12 2Z"/></svg></span>
+        AeroScope
+      </a>
+      <div class="nav-links">
+        <a href="#what">Overview</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#architecture">Architecture</a>
         <a href="#research">Research</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#backing">Backing</a>
-        <a href="https://aeroscope.live" class="launch-btn" target="_blank" rel="noopener">LAUNCH APP</a>
+        <a href="https://aeroscope.live" class="btn btn-primary" target="_blank" rel="noopener">Launch app ↗</a>
       </div>
     </div>
   </nav>
 
-  <div class="container" id="top">
-
-    <!-- HERO -->
-    <header class="hero fade-in">
-      <svg class="hero-radar" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="170" cy="170" r="160" stroke="#22d3ee" stroke-width="1" fill="none" opacity="0.3"/>
-        <circle cx="170" cy="170" r="110" stroke="#22d3ee" stroke-width="0.5" fill="none" opacity="0.2"/>
-        <circle cx="170" cy="170" r="60" stroke="#22d3ee" stroke-width="0.5" fill="none" opacity="0.15"/>
-        <line x1="170" y1="10" x2="170" y2="330" stroke="#22d3ee" stroke-width="0.3" opacity="0.1"/>
-        <line x1="10" y1="170" x2="330" y2="170" stroke="#22d3ee" stroke-width="0.3" opacity="0.1"/>
-        <g style="transform-origin:170px 170px;animation:radarSweep 4s linear infinite">
-          <path d="M170 170 L170 10 A160 160 0 0 1 295 60 Z" fill="url(#sweepGrad)"/>
-        </g>
-        <defs>
-          <linearGradient id="sweepGrad" x1="170" y1="170" x2="260" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.30"/>
-            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <style>@keyframes radarSweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}</style>
-      </svg>
-      <div class="eyebrow">OBSERVER-RELATIVE AIRSPACE INTELLIGENCE</div>
-      <h1>AEROSCOPE</h1>
-      <div class="tagline">What's in your sky — and what deserves a second look.</div>
-      <p>AeroScope turns crowdsourced ADS-B into a real-time, explainable picture of the aircraft over a chosen point on Earth. It fuses 60+ public feeds, scores each aircraft for attention from transparent rules, and runs a torch-free consensus anomaly detector built entirely on established libraries. It also ships an open, citable benchmark for ADS-B anomaly detection.</p>
-      <div class="hero-cta">
-        <a href="https://aeroscope.live" class="btn btn-primary" target="_blank" rel="noopener">Open the live platform</a>
-        <a href="#research" class="btn btn-ghost">Read the research</a>
-        <a href="#backing" class="btn btn-ghost">Back the project</a>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <canvas id="globe" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="pill"><span class="dot"></span> LIVE · OBSERVER-RELATIVE AIRSPACE INTELLIGENCE</div>
+        <h1>Know your <span class="grad-text">sky</span>.<span class="sub">AeroScope turns crowdsourced ADS-B into a real-time, explainable picture of the aircraft over any point on Earth — who they are, how they behave, and which ones deserve a second look.</span></h1>
+        <p class="lead">Sixty-plus public feeds, fused and de-duplicated. Transparent attention scoring. A torch-free consensus anomaly detector built entirely on established libraries — plus an open, citable benchmark for ADS-B anomaly detection.</p>
+        <div class="hero-cta">
+          <a href="https://aeroscope.live" class="btn btn-primary" target="_blank" rel="noopener">Open the live platform ↗</a>
+          <a href="#research" class="btn btn-ghost">Read the research</a>
+          <a href="#backing" class="btn btn-ghost">Back the project</a>
+        </div>
       </div>
-    </header>
-
-    <!-- STATS -->
-    <div class="stat-bar fade-in">
-      <div class="stat-card"><div class="num" data-count="60" data-suffix="+">0</div><div class="label">Public ADS-B feeds fused</div></div>
-      <div class="stat-card"><div class="num" data-count="38">0</div><div class="label">Documented benchmark columns</div></div>
-      <div class="stat-card"><div class="num" data-count="6">0</div><div class="label">Independent anomaly detectors</div></div>
-      <div class="stat-card"><div class="num" data-count="8">0</div><div class="label">Weighted attention factors</div></div>
-      <div class="stat-card"><div class="num" data-count="7" data-suffix="s">0</div><div class="label">Live position refresh</div></div>
-      <div class="stat-card"><div class="num">CC-BY</div><div class="label">Open dataset licence</div></div>
     </div>
+    <div class="scroll-hint">SCROLL<div class="line"></div></div>
+  </header>
 
-    <!-- WHAT IT IS -->
-    <section class="section fade-in" id="what">
-      <div class="kicker">THE PROBLEM</div>
-      <h2>Raw ADS-B is a firehose. AeroScope makes it legible.</h2>
-      <p class="subtitle">Every airliner, business jet, helicopter and many drones broadcast their position on 1090&nbsp;MHz. Dozens of volunteer receiver networks publish that traffic for free — but as undifferentiated dots. The hard part is not collecting positions; it is answering the operator's real questions about a specific patch of sky.</p>
-      <div class="grid">
-        <div class="card"><span class="ico">📍</span><h3>WHO IS UP THERE</h3><p>Identity resolved from the ICAO 24-bit address, registry, operator and type — including military hex ranges and aircraft broadcasting no callsign.</p></div>
-        <div class="card"><span class="ico">📈</span><h3>HOW THEY BEHAVE</h3><p>Pattern-of-life classification — orbits, racetracks, loiters, grid searches — plus deviation from each airframe's own learned envelope.</p></div>
-        <div class="card"><span class="ico">🛡️</span><h3>CAN YOU TRUST THE SIGNAL</h3><p>DO-260B integrity checks and NIC/NACp/SIL inspection flag implausible or downgraded broadcasts that a naïve tracker would draw as fact.</p></div>
-        <div class="card"><span class="ico">🎯</span><h3>WHAT DESERVES ATTENTION</h3><p>A transparent 0&ndash;100 attention score sorts a busy list so the one aircraft worth looking at isn't lost among a hundred routine ones.</p></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- CAPABILITIES -->
-    <section class="section fade-in" id="capabilities">
-      <div class="kicker">CAPABILITIES</div>
-      <h2>A surveillance pipeline, not a map with dots</h2>
-      <p class="subtitle">Each fetch cycle runs raw positions through an enrichment pipeline before anything reaches the screen. Everything below is deployed and running on the live platform.</p>
-      <div class="grid">
-        <div class="card"><span class="ico">🌐</span><h3>MULTI-SOURCE FUSION</h3><p>adsb.fi, adsb.lol, airplanes.live and OpenSky as terrestrial sources, plus a satellite-ADS-B merge. De-duplicated by ICAO 24-bit address; the same airframe seen by two networks is reconciled, not double-drawn.</p><span class="tag">60+ FEEDS</span></div>
-        <div class="card"><span class="ico">🎯</span><h3>ATTENTION SCORING</h3><p>Eight weighted rule-based factors — military hex, squawk, envelope anomaly, missing identity, restricted-airspace proximity, pattern, and signal integrity — summed into a 0&ndash;100 rank. Always explainable; never a verdict.</p><span class="tag">8 FACTORS</span></div>
-        <div class="card"><span class="ico">🧠</span><h3>CONSENSUS ANOMALY DETECTION</h3><p>River streaming detection, a scikit-learn IsolationForest baseline, a pykalman trajectory-innovation test, OpenAP envelope checks, stumpy matrix profiles and PyOD. An aircraft is flagged only when at least two detectors agree.</p><span class="tag">TORCH-FREE</span></div>
-        <div class="card"><span class="ico">🔍</span><h3>SPOOFING &amp; INTEGRITY</h3><p>A DO-260B style 7-check on each broadcast plus a Kalman normalized-innovation (NIS) test. Geometric-vs-barometric altitude, ground-speed-vs-Mach and track-vs-heading residuals expose self-inconsistent messages.</p><span class="tag">DO-260B</span></div>
-        <div class="card"><span class="ico">🛸</span><h3>DRONE / UAV HEURISTICS</h3><p>Remote-ID parsing combined with behavioural signatures — low-and-slow profiles, tight loiters, non-standard kinematics — surface candidate uncrewed aircraft from the broader picture.</p><span class="tag">REMOTE-ID</span></div>
-        <div class="card"><span class="ico">🛰️</span><h3>REAL-TIME SMOOTH MAP</h3><p>Client-side dead-reckoning glides every aircraft at its true ground speed between server fixes and corrects toward truth without ever snapping back — continuous motion, not a 30-second teleport.</p><span class="tag">DEAD-RECKONING</span></div>
-        <div class="card"><span class="ico">🧭</span><h3>PATTERN-OF-LIFE</h3><p>Automatic classification of orbits, racetracks, loiter and search patterns, with per-airframe behavioural baselines (DBSCAN routes, IsolationForest point anomalies) for deviation scoring.</p><span class="tag">BEHAVIOURAL</span></div>
-        <div class="card"><span class="ico">🚧</span><h3>GEOFENCING &amp; ALERTS</h3><p>Circle and polygon zones with enter/exit events, emergency-squawk detection (7500/7600/7700), and proximity thresholds relative to the observer's own position.</p><span class="tag">OBSERVER-RELATIVE</span></div>
-        <div class="card"><span class="ico">📦</span><h3>OPEN DATA &amp; API</h3><p>CSV, JSON and GeoJSON exports plus a documented REST/WebSocket API — designed so the analysis is reproducible, not a black box.</p><span class="tag">CSV / JSON / GEOJSON</span></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ARCHITECTURE -->
-    <section class="section fade-in" id="architecture">
-      <div class="kicker">ARCHITECTURE</div>
-      <h2>From 1090&nbsp;MHz to an explainable verdict</h2>
-      <p class="subtitle">A two-tier loop keeps the picture both fresh and deep: a lightweight position refresh keeps markers moving every few seconds, while the heavier enrichment-and-detection pipeline runs on its own cadence so the analysis never blocks the motion.</p>
-      <div class="pipeline">
-        <div class="pipeline-step"><div class="step-num">1</div><h4>INGEST</h4><p>60+ crowdsourced ADS-B feeds plus satellite ADS-B, fetched per active map region.</p></div>
-        <div class="pipeline-connector"><svg viewBox="0 0 30 20"><line class="connector-line" x1="0" y1="10" x2="30" y2="10"/></svg></div>
-        <div class="pipeline-step"><div class="step-num">2</div><h4>FUSE</h4><p>De-duplicate by ICAO 24-bit address; reconcile terrestrial and satellite views of the same airframe.</p></div>
-        <div class="pipeline-connector"><svg viewBox="0 0 30 20"><line class="connector-line" x1="0" y1="10" x2="30" y2="10"/></svg></div>
-        <div class="pipeline-step"><div class="step-num">3</div><h4>ENRICH</h4><p>Registry, Kalman tracks, DO-260B integrity, pattern-of-life and the 8-factor attention score.</p></div>
-        <div class="pipeline-connector"><svg viewBox="0 0 30 20"><line class="connector-line" x1="0" y1="10" x2="30" y2="10"/></svg></div>
-        <div class="pipeline-step"><div class="step-num">4</div><h4>DETECT</h4><p>Six independent anomaly detectors vote; a flag fires only on ≥2-detector consensus.</p></div>
-        <div class="pipeline-connector"><svg viewBox="0 0 30 20"><line class="connector-line" x1="0" y1="10" x2="30" y2="10"/></svg></div>
-        <div class="pipeline-step"><div class="step-num">5</div><h4>SERVE</h4><p>WebSocket + REST to a browser client that dead-reckons each marker for continuous motion.</p></div>
-      </div>
-      <p style="margin-top:18px">The detection layer is deliberately built from <strong>established, auditable libraries</strong> — River, scikit-learn, pykalman, OpenAP, stumpy, PyOD — rather than an opaque neural network. Every flag can be traced back to the features that produced it. There is no PyTorch and no reinforcement learning in the deployed system; an earlier RL prototype was evaluated and retired in favour of this transparent, reproducible stack.</p>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- THREAT SCORE DETAIL -->
-    <section class="section fade-in" id="scoring">
-      <div class="kicker">HOW THE SCORE WORKS</div>
-      <h2>An attention-ranker, shown working</h2>
-      <p class="subtitle">The score exists to sort, not to accuse. It rises when several independent indicators fire at once; the contributing factors are always displayed so an operator can agree or dismiss in a glance.</p>
-      <div class="gauge-wrap">
-        <div class="gauge" aria-hidden="true">
-          <div class="gauge-bg"></div>
-          <div class="gauge-mask"></div>
-          <div class="gauge-needle" id="gaugeNeedle"></div>
-          <div class="gauge-center"></div>
-          <div class="gauge-score" id="gaugeScore">12</div>
-        </div>
-        <div class="gauge-legend">
-          <div class="row"><span class="dot" style="background:#10b981"></span>0&ndash;40 &nbsp;Routine traffic — minor or no anomalies.</div>
-          <div class="row"><span class="dot" style="background:#f59e0b"></span>41&ndash;60 &nbsp;Moderate — multiple factors present, worth a glance.</div>
-          <div class="row"><span class="dot" style="background:#ef4444"></span>61&ndash;100 &nbsp;Elevated — several strong indicators agree.</div>
-          <p style="margin-top:10px;color:#64748b">The needle here cycles through example aircraft. In the live app it reflects real broadcasts, updated each cycle.</p>
-        </div>
-      </div>
-      <div class="factors" id="factors">
-        <div class="factor"><div class="flabel"><span>Military ICAO hex range</span><span>weight 20</span></div><div class="ftrack"><div class="ffill" style="--w:90%"></div></div></div>
-        <div class="factor"><div class="flabel"><span>Squawk code (7500 / 7600 / 7700)</span><span>weight 18</span></div><div class="ftrack"><div class="ffill" style="--w:82%"></div></div></div>
-        <div class="factor"><div class="flabel"><span>Signal integrity (NIC / NACp / SIL)</span><span>weight 14</span></div><div class="ftrack"><div class="ffill" style="--w:64%"></div></div></div>
-        <div class="factor"><div class="flabel"><span>Flight-envelope anomaly</span><span>weight 12</span></div><div class="ftrack"><div class="ffill" style="--w:55%"></div></div></div>
-        <div class="factor"><div class="flabel"><span>Missing callsign / registration</span><span>weight 10</span></div><div class="ftrack"><div class="ffill" style="--w:46%"></div></div></div>
-        <div class="factor"><div class="flabel"><span>Pattern-of-life classification</span><span>weight 10</span></div><div class="ftrack"><div class="ffill" style="--w:46%"></div></div></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- RESEARCH -->
-    <section class="section fade-in" id="research">
-      <div class="kicker">OPEN RESEARCH</div>
-      <h2>The AeroScope ADS-B Anomaly Benchmark</h2>
-      <p class="subtitle">Anomaly detectors in aviation security are hard to compare because there is little shared, labelled, openly-licensed data. AeroScope publishes a benchmark to help fix that — real traffic, a documented attack taxonomy, and an honest baseline.</p>
-      <div class="panel">
-        <h3>WHAT'S IN IT</h3>
-        <p>The benchmark pairs <strong>real airborne traffic</strong>, captured live from crowdsourced receiver feeds across multiple regions and de-duplicated by ICAO 24-bit address, with <strong>synthetically injected attacks</strong> following the standard taxonomy in the ADS-B security literature — altitude tampering, velocity tampering, ghost kinematics and integrity-field downgrade (methodology after Habler &amp; Shabtai, <em>Computers &amp; Security</em>, 2018).</p>
-        <p>Each record carries <strong>38 documented columns</strong>: raw ADS-B fields, the signal-integrity fields that matter for spoofing detection (NIC, NACp, NACv, SIL), derived self-consistency features (geometric-vs-barometric altitude difference, ground-speed-vs-Mach residual, barometric-vs-geometric vertical-rate difference, track-vs-heading difference), and the anomaly score from the deployed scikit-learn IsolationForest baseline.</p>
-        <p>That baseline's measured performance at training time was <strong>ROC-AUC ≈ 0.87</strong>, with roughly a 50% detection rate at a strict ~2% false-positive rate (threshold calibrated on held-out real traffic).</p>
-        <pre><code># Load the benchmark (Python)
-import pandas as pd
-df = pd.read_csv("aeroscope-adsb-anomaly-benchmark-v1.csv")
-print(df.shape)            # rows x 38 columns
-print(df.label.value_counts())   # real vs injected-attack</code></pre>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
-          <a class="btn btn-ghost" href="https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.csv" target="_blank" rel="noopener">Download CSV</a>
-          <a class="btn btn-ghost" href="https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.jsonl" target="_blank" rel="noopener">Download JSONL</a>
-          <a class="btn btn-ghost" href="https://aeroscope.live/research" target="_blank" rel="noopener">Dataset card &amp; columns</a>
-        </div>
-        <div class="cite">
-          <strong style="color:#cbd5e1">Cite as</strong><br/>
-          Uzair, M. (2026). <em>AeroScope ADS-B Anomaly Benchmark v1</em>. aeroscope.live. Licensed CC-BY 4.0. ORCID&nbsp;0009-0002-4104-2680.
-        </div>
-        <div class="limit">
-          <strong>Honest limitations.</strong> Synthetic injection is a proxy for real-world attacks; coverage is biased toward busy terminal areas; and the enhanced-surveillance fields (IAS / TAS / Mach / heading) are broadcast by only a subset of aircraft, so those columns are intentionally sparse. Full details are in the dataset card.
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- WHO IT'S FOR -->
-    <section class="section fade-in" id="who">
-      <div class="kicker">WHO IT'S FOR</div>
-      <h2>Built to be useful and verifiable</h2>
-      <div class="grid">
-        <div class="card"><span class="ico">🎓</span><h3>RESEARCHERS</h3><p>A labelled, openly-licensed benchmark for ADS-B anomaly and spoofing detection, plus reproducible exports for studying real-world aviation traffic.</p></div>
-        <div class="card"><span class="ico">📡</span><h3>OSINT &amp; AIRSPACE ANALYSTS</h3><p>Observer-relative monitoring of a specific location with explainable attention ranking, integrity flags and pattern detection.</p></div>
-        <div class="card"><span class="ico">✈️</span><h3>ENTHUSIASTS &amp; SPOTTERS</h3><p>A fast, smooth live map that says more than "a dot moved" — what the aircraft is, how it's flying and why it might be interesting.</p></div>
-        <div class="card"><span class="ico">📚</span><h3>EDUCATORS</h3><p>A working, transparent example of a multi-source fusion and anomaly-detection pipeline for teaching aviation surveillance and data integrity.</p></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ROADMAP -->
-    <section class="section fade-in" id="roadmap">
-      <div class="kicker">ROADMAP</div>
-      <h2>Where it's going</h2>
-      <p class="subtitle">Honest status: what is live today, what is being built, and what funding accelerates. No vapourware.</p>
-      <div class="roadmap">
-        <div class="road-item done"><div class="when badge-done">SHIPPED</div><h4>Multi-source fusion + real-time smooth map</h4><p>60+ feeds fused and de-duplicated; client-side dead-reckoning for continuous aircraft motion between server fixes.</p></div>
-        <div class="road-item done"><div class="when badge-done">SHIPPED</div><h4>Torch-free consensus anomaly detection</h4><p>Six established detectors with ≥2-detector consensus voting; DO-260B integrity and Kalman innovation checks in production.</p></div>
-        <div class="road-item done"><div class="when badge-done">SHIPPED</div><h4>Open ADS-B Anomaly Benchmark v1</h4><p>38-column, CC-BY 4.0 dataset of real traffic plus injected attacks, with a documented IsolationForest baseline.</p></div>
-        <div class="road-item"><div class="when badge-now">IN PROGRESS</div><h4>Peer-reviewed methodology write-up</h4><p>Formalising the benchmark construction and consensus-detector evaluation for academic submission.</p></div>
-        <div class="road-item"><div class="when badge-next">NEXT</div><h4>Benchmark v2 — multi-region, larger, real-incident labels</h4><p>Expanded coverage beyond terminal areas, more attack types, and incorporation of documented real anomalies where available.</p></div>
-        <div class="road-item"><div class="when badge-next">NEXT</div><h4>Multi-receiver mesh + richer integrity scoring</h4><p>Collaborative tracking across contributed receivers to extend coverage and cross-validate broadcasts.</p></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- BACKING -->
-    <section class="section fade-in" id="backing">
-      <div class="kicker">BACKING &amp; PARTNERSHIP</div>
-      <h2>Support independent aviation-security research</h2>
-      <div class="backing">
-        <h3>What your support unlocks</h3>
-        <p>AeroScope is built and run by one independent researcher. It is already live, already open, and already shipping citable data. Funding goes directly into the things that make it more useful to the community: <strong>more receivers and wider coverage</strong>, <strong>compute for a larger, peer-reviewable benchmark</strong>, the <strong>academic write-up</strong> of the methodology, and the engineering time to harden the platform.</p>
-        <p>If you are an investor, a research group, a receiver-network operator, or an organisation that cares about ADS-B integrity and open aviation data, I would genuinely like to talk.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
-          <a class="btn btn-primary" href="mailto:muhammaduzairr69@gmail.com?subject=AeroScope%20%E2%80%94%20partnership%2Fbacking">Get in touch</a>
-          <a class="btn btn-ghost" href="https://aeroscope.live" target="_blank" rel="noopener">See it live</a>
-        </div>
-        <div class="who">
-          <strong style="color:#cbd5e1">Muhammad Uzair</strong> — Department of Computer Science, COMSATS University Islamabad.<br/>
-          <a href="mailto:muhammaduzairr69@gmail.com">muhammaduzairr69@gmail.com</a> &nbsp;·&nbsp; ORCID <a href="https://orcid.org/0009-0002-4104-2680" target="_blank" rel="noopener">0009-0002-4104-2680</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- FAQ -->
-    <section class="section fade-in" id="faq">
-      <div class="kicker">FAQ</div>
-      <h2>Questions, answered plainly</h2>
-      <details><summary>What exactly is AeroScope?</summary><div class="answer">An observer-relative airspace-intelligence platform. It ingests aircraft positions from 60+ public ADS-B feeds, fuses and de-duplicates them, and presents a real-time, explainable view of the aircraft over a chosen point — their identity, behaviour, signal integrity, and which ones warrant attention. It also publishes an open anomaly-detection benchmark.</div></details>
-      <details><summary>Does it use deep learning or reinforcement learning?</summary><div class="answer">No. The anomaly layer is deliberately torch-free and built on established libraries — River, scikit-learn IsolationForest, pykalman, OpenAP, stumpy and PyOD — with consensus voting (≥2 detectors must agree). There is no PyTorch and no reinforcement learning; an earlier RL prototype was retired in favour of this transparent, reproducible stack.</div></details>
-      <details><summary>Is the threat score an accusation?</summary><div class="answer">No. It is a 0&ndash;100 attention-ranker that sorts a busy list, computed from eight transparent weighted factors. The contributing factors are always shown. It tells an operator where to look first; it does not pass judgement.</div></details>
-      <details><summary>What's in the open benchmark, and can I cite it?</summary><div class="answer">38 documented columns pairing real airborne traffic with synthetically injected attacks following the standard ADS-B security taxonomy, including the NIC/NACp/SIL integrity fields and derived self-consistency features. The bundled IsolationForest baseline measured ROC-AUC ≈ 0.87. It is CC-BY 4.0 — cite as "AeroScope ADS-B Anomaly Benchmark v1, aeroscope.live".</div></details>
-      <details><summary>Is the data accurate? What are the limits?</summary><div class="answer">Positions are exactly as good as the volunteer ADS-B networks that broadcast them, which is why integrity checking is a first-class feature rather than an afterthought. Documented limitations include synthetic-attack injection as a proxy for real attacks, coverage biased toward busy terminal areas, and sparse enhanced-surveillance fields. These are stated openly in the dataset card.</div></details>
-      <details><summary>How do I try it or get involved?</summary><div class="answer">The live platform is at <a href="https://aeroscope.live" target="_blank" rel="noopener">aeroscope.live</a>. For research collaboration, partnership or backing, email <a href="mailto:muhammaduzairr69@gmail.com">muhammaduzairr69@gmail.com</a>.</div></details>
-    </section>
-
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span class="chip"><b>adsb.fi</b></span><span class="chip"><b>adsb.lol</b></span><span class="chip"><b>airplanes.live</b></span><span class="chip"><b>OpenSky</b></span><span class="chip"><b>satellite ADS-B</b></span><span class="chip"><b>River</b> streaming</span><span class="chip"><b>scikit-learn</b> IsolationForest</span><span class="chip"><b>pykalman</b> innovation</span><span class="chip"><b>OpenAP</b> envelope</span><span class="chip"><b>stumpy</b> matrix-profile</span><span class="chip"><b>PyOD</b> outliers</span><span class="chip"><b>DO-260B</b> integrity</span>
+      <span class="chip"><b>adsb.fi</b></span><span class="chip"><b>adsb.lol</b></span><span class="chip"><b>airplanes.live</b></span><span class="chip"><b>OpenSky</b></span><span class="chip"><b>satellite ADS-B</b></span><span class="chip"><b>River</b> streaming</span><span class="chip"><b>scikit-learn</b> IsolationForest</span><span class="chip"><b>pykalman</b> innovation</span><span class="chip"><b>OpenAP</b> envelope</span><span class="chip"><b>stumpy</b> matrix-profile</span><span class="chip"><b>PyOD</b> outliers</span><span class="chip"><b>DO-260B</b> integrity</span>
+    </div>
   </div>
 
-  <footer>
-    <div class="inner">
-      <div class="col">
-        <h4>PLATFORM</h4>
-        <a href="https://aeroscope.live" target="_blank" rel="noopener">Live app</a>
-        <a href="https://aeroscope.live/features" target="_blank" rel="noopener">Features</a>
-        <a href="https://aeroscope.live/how-it-works" target="_blank" rel="noopener">How it works</a>
-        <a href="https://aeroscope.live/coverage" target="_blank" rel="noopener">Coverage</a>
-      </div>
-      <div class="col">
-        <h4>RESEARCH</h4>
-        <a href="https://aeroscope.live/research" target="_blank" rel="noopener">Dataset &amp; card</a>
-        <a href="https://aeroscope.live/ads-b-technology" target="_blank" rel="noopener">ADS-B technology</a>
-        <a href="https://aeroscope.live/api-docs" target="_blank" rel="noopener">API docs</a>
-        <a href="https://orcid.org/0009-0002-4104-2680" target="_blank" rel="noopener">ORCID</a>
-      </div>
-      <div class="col">
-        <h4>CONTACT</h4>
-        <a href="mailto:muhammaduzairr69@gmail.com">Email</a>
-        <a href="#backing">Backing &amp; partnership</a>
+  <!-- WHAT -->
+  <section id="what">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">The problem</div>
+      <h2 class="h2">Raw ADS-B is a firehose.<br/>AeroScope makes it legible.</h2>
+      <p class="lead2">Every airliner, business jet, helicopter and many drones broadcast their position on 1090&nbsp;MHz. Dozens of volunteer networks publish that traffic for free — but as undifferentiated dots. The hard part isn't collecting positions; it's answering the real questions about a specific patch of sky.</p></div>
+      <div class="stats">
+        <div class="stat reveal d1"><div class="n grad-text" data-count="60" data-suffix="+">0</div><div class="l">public ADS-B feeds fused &amp; de-duplicated</div></div>
+        <div class="stat reveal d2"><div class="n grad-text" data-count="6">0</div><div class="l">independent anomaly detectors, consensus-voted</div></div>
+        <div class="stat reveal d3"><div class="n grad-text" data-count="38">0</div><div class="l">documented columns in the open benchmark</div></div>
+        <div class="stat reveal d4"><div class="n grad-text" data-count="7" data-suffix="s">0</div><div class="l">live position refresh on the map</div></div>
       </div>
     </div>
-    <div class="bottom">
-      &copy; 2026 AeroScope &middot; Built by Muhammad Uzair, COMSATS University Islamabad.<br/>
-      Observer-relative airspace intelligence from crowdsourced ADS-B. Open data, transparent methods.
+  </section>
+
+  <!-- SHOWCASE -->
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">The platform, live</div>
+      <h2 class="h2">A surveillance console, not a map of dots</h2>
+      <p class="lead2">Each fetch cycle runs raw positions through an enrichment-and-detection pipeline before anything reaches the screen.</p></div>
+      <div class="showcase reveal">
+        <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u mono">aeroscope.live</span></div>
+        <img src="aeroscope-dashboard.png" alt="AeroScope live console showing tracked aircraft, threat scores and analysis panels over a chosen area" loading="lazy"/>
+        <div class="cap">Live console — tracked aircraft, attention scores, integrity flags and pattern analysis over an observer-chosen area.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Capabilities</div>
+      <h2 class="h2">Deployed, and running today</h2>
+      <p class="lead2">Everything below is live on the platform — not a roadmap.</p></div>
+      <div class="grid">
+        <div class="card reveal" data-tilt><div class="ic">🌐</div><h3>Multi-source fusion</h3><p>adsb.fi, adsb.lol, airplanes.live and OpenSky plus a satellite-ADS-B merge, de-duplicated by ICAO 24-bit address. The same airframe seen by two networks is reconciled, not double-drawn.</p><span class="tag">60+ FEEDS</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🎯</div><h3>Attention scoring</h3><p>Eight weighted rule-based factors — military hex, squawk, envelope anomaly, missing identity, restricted-airspace proximity, pattern, signal integrity — summed into a 0&ndash;100 rank. Always explainable; never a verdict.</p><span class="tag">8 FACTORS</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🧠</div><h3>Consensus anomaly detection</h3><p>River, scikit-learn IsolationForest, a pykalman innovation test, OpenAP envelope checks, stumpy matrix profiles and PyOD. A flag fires only when at least two detectors agree.</p><span class="tag">TORCH-FREE</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🛡️</div><h3>Spoofing &amp; integrity</h3><p>A DO-260B style 7-check plus a Kalman normalized-innovation test. Geometric-vs-barometric altitude, ground-speed-vs-Mach and track-vs-heading residuals expose self-inconsistent messages.</p><span class="tag">DO-260B</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🛸</div><h3>Drone / UAV heuristics</h3><p>Remote-ID parsing combined with behavioural signatures — low-and-slow profiles, tight loiters, non-standard kinematics — surface candidate uncrewed aircraft.</p><span class="tag">REMOTE-ID</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🛰️</div><h3>Real-time smooth map</h3><p>Client-side dead-reckoning glides every aircraft at its true ground speed between fixes and corrects toward truth without snapping back — continuous motion, not a teleport.</p><span class="tag">DEAD-RECKONING</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🧭</div><h3>Pattern-of-life</h3><p>Automatic orbit, racetrack, loiter and search classification, with per-airframe behavioural baselines (DBSCAN routes, IsolationForest point anomalies) for deviation scoring.</p><span class="tag">BEHAVIOURAL</span></div>
+        <div class="card reveal" data-tilt><div class="ic">🚧</div><h3>Geofencing &amp; alerts</h3><p>Circle and polygon zones with enter/exit events, emergency-squawk detection (7500/7600/7700), and proximity thresholds relative to the observer.</p><span class="tag">OBSERVER-RELATIVE</span></div>
+        <div class="card reveal" data-tilt><div class="ic">📦</div><h3>Open data &amp; API</h3><p>CSV, JSON and GeoJSON exports plus a documented REST/WebSocket API — so the analysis is reproducible, not a black box.</p><span class="tag">CSV / JSON / GEOJSON</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section id="architecture">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Architecture</div>
+      <h2 class="h2">From 1090&nbsp;MHz to an explainable verdict</h2>
+      <p class="lead2">A two-tier loop keeps the picture both fresh and deep: a lightweight position refresh keeps markers moving every few seconds, while the heavier enrichment-and-detection pipeline runs on its own cadence so analysis never blocks motion.</p></div>
+      <div class="pipe reveal">
+        <div class="pstep"><div class="num">01</div><h4>Ingest</h4><p>60+ crowdsourced ADS-B feeds plus satellite ADS-B, fetched per active map region.</p><span class="arrow">→</span></div>
+        <div class="pstep"><div class="num">02</div><h4>Fuse</h4><p>De-duplicate by ICAO 24-bit address; reconcile terrestrial and satellite views.</p><span class="arrow">→</span></div>
+        <div class="pstep"><div class="num">03</div><h4>Enrich</h4><p>Registry, Kalman tracks, DO-260B integrity, pattern-of-life, 8-factor score.</p><span class="arrow">→</span></div>
+        <div class="pstep"><div class="num">04</div><h4>Detect</h4><p>Six detectors vote; a flag fires only on ≥2-detector consensus.</p><span class="arrow">→</span></div>
+        <div class="pstep"><div class="num">05</div><h4>Serve</h4><p>WebSocket + REST to a client that dead-reckons each marker for smooth motion.</p><span class="arrow">→</span></div>
+      </div>
+      <svg class="wave reveal" viewBox="0 0 1100 70" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="wgrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb454"/><stop offset="0.5" stop-color="#ff7a2f"/><stop offset="1" stop-color="#9a7bff"/></linearGradient></defs>
+        <path d="M0,35 Q70,5 140,35 T280,35 T420,35 T560,35 T700,35 T840,35 T980,35 T1120,35"/>
+      </svg>
+      <p class="lead2" style="margin-top:22px">The detection layer is deliberately built from <b style="color:var(--ink)">established, auditable libraries</b> — River, scikit-learn, pykalman, OpenAP, stumpy, PyOD — rather than an opaque neural network. Every flag traces back to the features that produced it. There is no PyTorch and no reinforcement learning in the deployed system; an earlier RL prototype was evaluated and retired in favour of this transparent stack.</p>
+    </div>
+  </section>
+
+  <!-- SCORE -->
+  <section id="scoring">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">How the score works</div>
+      <h2 class="h2">An attention-ranker, shown working</h2>
+      <p class="lead2">The score exists to sort, not to accuse. It rises when several independent indicators fire at once; the contributing factors are always displayed.</p></div>
+      <div class="gwrap reveal">
+        <div class="gauge" aria-hidden="true">
+          <div class="bg"></div><div class="mask"></div>
+          <div class="needle" id="gn"></div><div class="hub"></div>
+          <div class="val" id="gv">12</div>
+        </div>
+        <div class="glegend">
+          <div class="r"><span class="d" style="background:var(--mint)"></span>0&ndash;40 &nbsp;Routine traffic — minor or no anomalies.</div>
+          <div class="r"><span class="d" style="background:var(--amber)"></span>41&ndash;60 &nbsp;Moderate — multiple factors present.</div>
+          <div class="r"><span class="d" style="background:#ff4d4d"></span>61&ndash;100 &nbsp;Elevated — several strong indicators agree.</div>
+          <p style="margin-top:10px;color:var(--faint);font-size:12px">The needle cycles through example aircraft. In the live app it reflects real broadcasts, updated each cycle.</p>
+        </div>
+      </div>
+      <div class="factors reveal" id="factors">
+        <div class="factor"><div class="fl"><span>Military ICAO hex range</span><span>weight 20</span></div><div class="ftrack"><div class="ffill" style="--w:90%"></div></div></div>
+        <div class="factor"><div class="fl"><span>Squawk code (7500 / 7600 / 7700)</span><span>weight 18</span></div><div class="ftrack"><div class="ffill" style="--w:82%"></div></div></div>
+        <div class="factor"><div class="fl"><span>Signal integrity (NIC / NACp / SIL)</span><span>weight 14</span></div><div class="ftrack"><div class="ffill" style="--w:64%"></div></div></div>
+        <div class="factor"><div class="fl"><span>Flight-envelope anomaly</span><span>weight 12</span></div><div class="ftrack"><div class="ffill" style="--w:55%"></div></div></div>
+        <div class="factor"><div class="fl"><span>Missing callsign / registration</span><span>weight 10</span></div><div class="ftrack"><div class="ffill" style="--w:46%"></div></div></div>
+        <div class="factor"><div class="fl"><span>Pattern-of-life classification</span><span>weight 10</span></div><div class="ftrack"><div class="ffill" style="--w:46%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Open research</div>
+      <h2 class="h2">The AeroScope ADS-B Anomaly Benchmark</h2>
+      <p class="lead2">Anomaly detectors in aviation security are hard to compare because there is little shared, labelled, openly-licensed data. AeroScope publishes a benchmark to help fix that — real traffic, a documented attack taxonomy, and an honest baseline.</p></div>
+      <div class="panel reveal">
+        <h3>What's in it</h3>
+        <p style="color:var(--muted);font-size:13.5px;line-height:1.85">The benchmark pairs <b style="color:var(--ink)">real airborne traffic</b>, captured live from crowdsourced receiver feeds across multiple regions and de-duplicated by ICAO 24-bit address, with <b style="color:var(--ink)">synthetically injected attacks</b> following the standard taxonomy in the ADS-B security literature — altitude tampering, velocity tampering, ghost kinematics and integrity-field downgrade (methodology after Habler &amp; Shabtai, <em>Computers &amp; Security</em>, 2018).</p>
+        <p style="color:var(--muted);font-size:13.5px;line-height:1.85;margin-top:12px">Each record carries <b style="color:var(--ink)">38 documented columns</b>: raw ADS-B fields, the integrity fields that matter for spoofing detection (NIC, NACp, NACv, SIL), derived self-consistency features (geometric-vs-barometric altitude, ground-speed-vs-Mach residual, track-vs-heading difference), and the anomaly score from the deployed scikit-learn IsolationForest baseline — which measured <b style="color:var(--ink)">ROC-AUC ≈ 0.87</b> (≈50% detection at a strict ~2% false-positive rate, threshold calibrated on held-out real traffic).</p>
+        <pre><code><span class="pre-cmt"># Load the benchmark (Python)</span>
+<span class="pre-k">import</span> pandas <span class="pre-k">as</span> pd
+df = pd.read_csv(<span class="pre-s">"aeroscope-adsb-anomaly-benchmark-v1.csv"</span>)
+print(df.shape)             <span class="pre-cmt"># rows x 38 columns</span>
+print(df.label.value_counts())  <span class="pre-cmt"># real vs injected-attack</span></code></pre>
+        <div class="dl">
+          <a class="btn btn-ghost" href="https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.csv" target="_blank" rel="noopener">Download CSV</a>
+          <a class="btn btn-ghost" href="https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.jsonl" target="_blank" rel="noopener">Download JSONL</a>
+          <a class="btn btn-ghost" href="https://aeroscope.live/research" target="_blank" rel="noopener">Dataset card &amp; columns ↗</a>
+        </div>
+        <div class="cite"><b style="color:var(--ink)">Cite as</b> &nbsp; Uzair, M. (2026). <em>AeroScope ADS-B Anomaly Benchmark v1</em>. aeroscope.live. CC-BY 4.0. ORCID&nbsp;0009-0002-4104-2680.</div>
+        <div class="limit"><b>Honest limitations.</b> Synthetic injection is a proxy for real attacks; coverage is biased toward busy terminal areas; and enhanced-surveillance fields (IAS / TAS / Mach / heading) are broadcast by only a subset of aircraft, so those columns are intentionally sparse. Full details are in the dataset card.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section id="who">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Who it's for</div>
+      <h2 class="h2">Built to be useful and verifiable</h2></div>
+      <div class="grid">
+        <div class="card reveal" data-tilt><div class="ic">🎓</div><h3>Researchers</h3><p>A labelled, openly-licensed benchmark for ADS-B anomaly and spoofing detection, plus reproducible exports for studying real-world traffic.</p></div>
+        <div class="card reveal" data-tilt><div class="ic">📡</div><h3>OSINT &amp; airspace analysts</h3><p>Observer-relative monitoring of a specific location with explainable attention ranking, integrity flags and pattern detection.</p></div>
+        <div class="card reveal" data-tilt><div class="ic">✈️</div><h3>Enthusiasts &amp; spotters</h3><p>A fast, smooth live map that says more than "a dot moved" — what the aircraft is, how it's flying and why it might be interesting.</p></div>
+        <div class="card reveal" data-tilt><div class="ic">📚</div><h3>Educators</h3><p>A working, transparent example of a multi-source fusion and anomaly-detection pipeline for teaching aviation surveillance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Roadmap</div>
+      <h2 class="h2">Where it's going</h2>
+      <p class="lead2">Honest status: what's live today, what's being built, and what funding accelerates. No vapourware.</p></div>
+      <div class="timeline reveal">
+        <div class="ti done"><div class="when">SHIPPED</div><h4>Multi-source fusion + real-time smooth map</h4><p>60+ feeds fused and de-duplicated; client-side dead-reckoning for continuous aircraft motion between fixes.</p></div>
+        <div class="ti done"><div class="when">SHIPPED</div><h4>Torch-free consensus anomaly detection</h4><p>Six established detectors with ≥2-detector consensus; DO-260B integrity and Kalman innovation checks in production.</p></div>
+        <div class="ti done"><div class="when">SHIPPED</div><h4>Open ADS-B Anomaly Benchmark v1</h4><p>38-column, CC-BY 4.0 dataset of real traffic plus injected attacks, with a documented IsolationForest baseline.</p></div>
+        <div class="ti now"><div class="when">IN PROGRESS</div><h4>Peer-reviewed methodology write-up</h4><p>Formalising the benchmark construction and consensus-detector evaluation for academic submission.</p></div>
+        <div class="ti"><div class="when">NEXT</div><h4>Benchmark v2 — multi-region, larger, real-incident labels</h4><p>Expanded coverage beyond terminal areas, more attack types, and documented real anomalies where available.</p></div>
+        <div class="ti"><div class="when">NEXT</div><h4>Multi-receiver mesh + richer integrity scoring</h4><p>Collaborative tracking across contributed receivers to extend coverage and cross-validate broadcasts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKING -->
+  <section id="backing">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">Backing &amp; partnership</div>
+      <h2 class="h2">Support independent aviation-security research</h2></div>
+      <div class="backing reveal">
+        <h3>What your support unlocks</h3>
+        <p>AeroScope is built and run by one independent researcher. It is already live, already open, and already shipping citable data. Funding goes directly into the things that make it more useful to the community: <b style="color:var(--ink)">more receivers and wider coverage</b>, <b style="color:var(--ink)">compute for a larger, peer-reviewable benchmark</b>, the <b style="color:var(--ink)">academic write-up</b> of the methodology, and engineering time to harden the platform.</p>
+        <p>If you are an investor, a research group, a receiver-network operator, or an organisation that cares about ADS-B integrity and open aviation data, I'd genuinely like to talk.</p>
+        <div style="display:flex;gap:13px;flex-wrap:wrap;justify-content:center;margin-top:10px;position:relative">
+          <a class="btn btn-primary" href="mailto:muhammaduzairr69@gmail.com?subject=AeroScope%20%E2%80%94%20partnership%2Fbacking">Get in touch</a>
+          <a class="btn btn-ghost" href="https://aeroscope.live" target="_blank" rel="noopener">See it live ↗</a>
+        </div>
+        <div class="who"><b style="color:var(--ink)">Muhammad Uzair</b> — Department of Computer Science, COMSATS University Islamabad<br/><a href="mailto:muhammaduzairr69@gmail.com">muhammaduzairr69@gmail.com</a> &nbsp;·&nbsp; ORCID <a href="https://orcid.org/0009-0002-4104-2680" target="_blank" rel="noopener">0009-0002-4104-2680</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="reveal"><div class="kicker">FAQ</div>
+      <h2 class="h2">Questions, answered plainly</h2></div>
+      <div class="reveal">
+        <details><summary>What exactly is AeroScope?</summary><div class="a">An observer-relative airspace-intelligence platform. It ingests aircraft positions from 60+ public ADS-B feeds, fuses and de-duplicates them, and presents a real-time, explainable view of the aircraft over a chosen point — identity, behaviour, signal integrity, and which ones warrant attention. It also publishes an open anomaly-detection benchmark.</div></details>
+        <details><summary>Does it use deep learning or reinforcement learning?</summary><div class="a">No. The anomaly layer is deliberately torch-free and built on established libraries — River, scikit-learn IsolationForest, pykalman, OpenAP, stumpy and PyOD — with consensus voting (≥2 detectors must agree). There is no PyTorch and no reinforcement learning; an earlier RL prototype was retired in favour of this transparent, reproducible stack.</div></details>
+        <details><summary>Is the threat score an accusation?</summary><div class="a">No. It is a 0&ndash;100 attention-ranker that sorts a busy list, computed from eight transparent weighted factors, with the contributing factors always shown. It tells an operator where to look first; it does not pass judgement.</div></details>
+        <details><summary>What's in the open benchmark, and can I cite it?</summary><div class="a">38 documented columns pairing real airborne traffic with synthetically injected attacks following the standard ADS-B security taxonomy, including the NIC/NACp/SIL integrity fields and derived self-consistency features. The bundled IsolationForest baseline measured ROC-AUC ≈ 0.87. It is CC-BY 4.0 — cite as "AeroScope ADS-B Anomaly Benchmark v1, aeroscope.live".</div></details>
+        <details><summary>How do I try it or get involved?</summary><div class="a">The live platform is at <a href="https://aeroscope.live" target="_blank" rel="noopener">aeroscope.live</a>. For research collaboration, partnership or backing, email <a href="mailto:muhammaduzairr69@gmail.com">muhammaduzairr69@gmail.com</a>.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fgrid">
+        <div class="fcol" style="max-width:300px">
+          <div class="brand" style="margin-bottom:12px"><span class="mark"><svg viewBox="0 0 24 24" fill="#0a0a12"><path d="M12 2L8 10H3L5 13H8L10 22H14L16 13H19L21 10H16L12 2Z"/></svg></span>AeroScope</div>
+          <p style="font-size:12.5px;color:var(--faint);line-height:1.8">Observer-relative airspace intelligence from crowdsourced ADS-B. Open data, transparent methods.</p>
+        </div>
+        <div class="fcol"><h5>PLATFORM</h5><a href="https://aeroscope.live" target="_blank" rel="noopener">Live app</a><a href="https://aeroscope.live/features" target="_blank" rel="noopener">Features</a><a href="https://aeroscope.live/how-it-works" target="_blank" rel="noopener">How it works</a><a href="https://aeroscope.live/coverage" target="_blank" rel="noopener">Coverage</a></div>
+        <div class="fcol"><h5>RESEARCH</h5><a href="https://aeroscope.live/research" target="_blank" rel="noopener">Dataset &amp; card</a><a href="https://aeroscope.live/ads-b-technology" target="_blank" rel="noopener">ADS-B technology</a><a href="https://aeroscope.live/api-docs" target="_blank" rel="noopener">API docs</a><a href="https://orcid.org/0009-0002-4104-2680" target="_blank" rel="noopener">ORCID</a></div>
+        <div class="fcol"><h5>CONTACT</h5><a href="mailto:muhammaduzairr69@gmail.com">Email</a><a href="#backing">Backing &amp; partnership</a></div>
+      </div>
+      <div class="fbottom">© 2026 AeroScope · Built by Muhammad Uzair, COMSATS University Islamabad.<br/>Designed independently of the live application — open data, transparent methods.</div>
     </div>
   </footer>
 
   <script>
-    // Floating-particle entrance + scroll fade-ins
-    (function(){
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.fade-in, .factors').forEach(function(el){ obs.observe(el); });
-    })();
+  /* ── 3D flight-arc globe (vanilla canvas, no library) ── */
+  (function(){
+    var c = document.getElementById('globe');
+    if(!c || !c.getContext) return;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ctx = c.getContext('2d');
+    var DPR = Math.min(devicePixelRatio||1, 2);
+    var W,H,R,cx,cy;
+    function size(){ var r=c.getBoundingClientRect(); W=r.width; H=r.height; if(!W||!H)return; c.width=W*DPR; c.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); R=Math.min(W,H)*0.40; cx=W/2; cy=H/2; }
+    size(); addEventListener('resize', size);
 
-    // Count-up animation for the stat bar
-    (function(){
-      function run(el){
-        var end = parseInt(el.getAttribute('data-count'), 10);
-        var suffix = el.getAttribute('data-suffix') || '';
-        var t0 = performance.now(), dur = 1100;
-        function tick(t){
-          var p = Math.min((t - t0) / dur, 1);
-          if(p < 1){ el.textContent = Math.round(end * p); requestAnimationFrame(tick); }
-          else { el.textContent = end + suffix; }
-        }
-        requestAnimationFrame(tick);
+    // fibonacci-sphere points
+    var N=1500, pts=[], ga=Math.PI*(3-Math.sqrt(5));
+    for(var i=0;i<N;i++){ var y=1-(i/(N-1))*2, rr=Math.sqrt(1-y*y), th=ga*i; pts.push([Math.cos(th)*rr, y, Math.sin(th)*rr]); }
+
+    function ll(lat,lon){ var la=lat*Math.PI/180, lo=lon*Math.PI/180; return [Math.cos(la)*Math.cos(lo), Math.sin(la), Math.cos(la)*Math.sin(lo)]; }
+    function dot(a,b){ return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]; }
+    function slerp(a,b,t){ var d=Math.max(-1,Math.min(1,dot(a,b))), o=Math.acos(d); if(o<1e-4)return a; var s=Math.sin(o), f1=Math.sin((1-t)*o)/s, f2=Math.sin(t*o)/s; return [a[0]*f1+b[0]*f2, a[1]*f1+b[1]*f2, a[2]*f1+b[2]*f2]; }
+    var cities=[[51.5,-0.1],[40.7,-74],[35.7,139.7],[1.35,103.8],[-33.9,151.2],[25.2,55.3],[48.85,2.35],[34,-118],[19,72.8],[-23.5,-46.6],[55.75,37.6],[-1.3,36.8],[31.2,121.5],[37.6,-122.4]];
+    var arcs=[];
+    for(var k=0;k<10;k++){
+      var a=ll.apply(null,cities[k%cities.length]), b=ll.apply(null,cities[(k*5+3)%cities.length]);
+      var steps=64, ap=[], dd=Math.acos(Math.max(-1,Math.min(1,dot(a,b)))), lift=0.16+0.12*(dd/Math.PI);
+      for(var s=0;s<=steps;s++){ var t=s/steps, p=slerp(a,b,t), h=1+lift*Math.sin(Math.PI*t); ap.push([p[0]*h,p[1]*h,p[2]*h]); }
+      arcs.push({ p:ap, off:(k*0.137)%1, spd:0.09+0.045*((k*7%5)/5) });
+    }
+
+    function rot(p,ay,ax){
+      var cY=Math.cos(ay),sY=Math.sin(ay), x=p[0]*cY-p[2]*sY, z=p[0]*sY+p[2]*cY, y=p[1];
+      var cX=Math.cos(ax),sX=Math.sin(ax); return [x, y*cX-z*sX, y*sX+z*cX];
+    }
+    function colAt(t){ // amber -> violet
+      var r=Math.round(255+(154-255)*t), g=Math.round(180+(123-180)*t), b=Math.round(84+(255-84)*t); return r+','+g+','+b;
+    }
+    var t0=performance.now(), raf;
+    function draw(now){
+      if(!W||!H){ raf=requestAnimationFrame(draw); return; }
+      var el=(now-t0)/1000, ay=el*0.16, ax=-0.42;
+      ctx.clearRect(0,0,W,H);
+      // atmosphere
+      var g=ctx.createRadialGradient(cx,cy,R*0.55,cx,cy,R*1.55);
+      g.addColorStop(0,'rgba(154,123,255,0.10)'); g.addColorStop(0.6,'rgba(255,122,47,0.05)'); g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R*1.55,0,7); ctx.fill();
+      // points
+      for(var i=0;i<pts.length;i++){
+        var p=rot(pts[i],ay,ax), sx=cx+p[0]*R, sy=cy-p[1]*R, z=p[2];
+        var a = z>0 ? 0.16+0.5*z : 0.05+0.08*(z+1), sz = z>0 ? 0.9+0.9*z : 0.6;
+        ctx.fillStyle='rgba(255,176,90,'+a.toFixed(3)+')';
+        ctx.beginPath(); ctx.arc(sx,sy,sz,0,7); ctx.fill();
       }
-      var seen = new WeakSet();
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting && e.target.hasAttribute('data-count') && !seen.has(e.target)){
-            seen.add(e.target); run(e.target); obs.unobserve(e.target);
+      // arcs
+      for(var k=0;k<arcs.length;k++){
+        var arc=arcs[k], head=(el*arc.spd+arc.off)%1, tail=Math.max(0,head-0.34), prev=null, prevZ=1;
+        for(var s=0;s<arc.p.length;s++){
+          var tt=s/(arc.p.length-1);
+          if(tt<tail||tt>head){ prev=null; continue; }
+          var p=rot(arc.p[s],ay,ax), sx=cx+p[0]*R, sy=cy-p[1]*R, z=p[2];
+          if(prev){
+            var seg=(tt-tail)/(head-tail||1), za=(z>0?1:0.32);
+            ctx.strokeStyle='rgba('+colAt(seg)+','+((0.12+0.62*seg)*za).toFixed(3)+')';
+            ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(prev[0],prev[1]); ctx.lineTo(sx,sy); ctx.stroke();
           }
-        });
-      }, { threshold: 0.5 });
-      document.querySelectorAll('.num[data-count]').forEach(function(el){ obs.observe(el); });
-    })();
-
-    // Threat gauge demo — cycles through example aircraft
-    (function(){
-      var steps = [
-        { angle: -70, score: 12, color: '#10b981' },
-        { angle: -28, score: 38, color: '#10b981' },
-        { angle:  -2, score: 52, color: '#f59e0b' },
-        { angle:  40, score: 78, color: '#ef4444' },
-        { angle:  58, score: 93, color: '#ef4444' },
-        { angle: -45, score: 27, color: '#10b981' }
-      ];
-      var i = 0;
-      var needle = document.getElementById('gaugeNeedle');
-      var scoreEl = document.getElementById('gaugeScore');
-      if(!needle || !scoreEl) return;
-      function step(){
-        i = (i + 1) % steps.length;
-        var s = steps[i];
-        needle.style.transform = 'rotate(' + s.angle + 'deg)';
-        scoreEl.style.color = s.color;
-        var start = parseInt(scoreEl.textContent, 10) || 0, t0 = performance.now();
-        function tick(t){
-          var p = Math.min((t - t0) / 700, 1);
-          scoreEl.textContent = Math.round(start + (s.score - start) * p);
-          if(p < 1) requestAnimationFrame(tick);
+          prev=[sx,sy]; prevZ=z;
         }
-        requestAnimationFrame(tick);
+        if(prev){ // comet head
+          var za=(prevZ>0?1:0.4);
+          ctx.fillStyle='rgba(255,210,150,'+(0.9*za).toFixed(2)+')';
+          ctx.beginPath(); ctx.arc(prev[0],prev[1],2.4,0,7); ctx.fill();
+        }
       }
-      setInterval(step, 2600);
-    })();
+      raf=requestAnimationFrame(draw);
+    }
+    if(reduce){ t0=performance.now()-2; draw(performance.now()); }
+    else {
+      raf=requestAnimationFrame(draw);
+      var hiddenAt=0;
+      document.addEventListener('visibilitychange',function(){
+        if(document.hidden){ cancelAnimationFrame(raf); hiddenAt=performance.now(); }
+        else { t0+=performance.now()-hiddenAt; raf=requestAnimationFrame(draw); }
+      });
+    }
+  })();
+
+  /* ── scroll reveals ── */
+  (function(){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.12});
+    document.querySelectorAll('.reveal, .factors').forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ── count-up stats ── */
+  (function(){
+    function run(el){ var end=parseInt(el.getAttribute('data-count'),10), suf=el.getAttribute('data-suffix')||'', t0=performance.now();
+      (function tick(t){ var p=Math.min((t-t0)/1100,1); if(p<1){ el.textContent=Math.round(end*p); requestAnimationFrame(tick);} else el.textContent=end+suf; })(performance.now()); }
+    var seen=new WeakSet();
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !seen.has(e.target)){ seen.add(e.target); run(e.target); io.unobserve(e.target);} }); },{threshold:0.6});
+    document.querySelectorAll('.n[data-count]').forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ── 3D tilt cards ── */
+  (function(){
+    if(matchMedia('(pointer:coarse)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    document.querySelectorAll('[data-tilt]').forEach(function(card){
+      card.addEventListener('pointermove',function(e){
+        var r=card.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+        card.style.transform='perspective(820px) rotateX('+((py-0.5)*-8).toFixed(2)+'deg) rotateY('+((px-0.5)*11).toFixed(2)+'deg) translateZ(6px)';
+        card.style.setProperty('--gx',(px*100)+'%'); card.style.setProperty('--gy',(py*100)+'%');
+      });
+      card.addEventListener('pointerleave',function(){ card.style.transform=''; });
+    });
+  })();
+
+  /* ── gauge demo ── */
+  (function(){
+    var steps=[{a:-72,s:12,c:'#5cf2a8'},{a:-30,s:38,c:'#5cf2a8'},{a:-2,s:52,c:'#ffb454'},{a:40,s:78,c:'#ff4d4d'},{a:58,s:93,c:'#ff4d4d'},{a:-46,s:27,c:'#5cf2a8'}];
+    var i=0, n=document.getElementById('gn'), v=document.getElementById('gv'); if(!n||!v) return;
+    setInterval(function(){
+      i=(i+1)%steps.length; var st=steps[i]; n.style.transform='rotate('+st.a+'deg)'; v.style.color=st.c;
+      var start=parseInt(v.textContent,10)||0, t0=performance.now();
+      (function tick(t){ var p=Math.min((t-t0)/650,1); v.textContent=Math.round(start+(st.s-start)*p); if(p<1)requestAnimationFrame(tick); })(performance.now());
+    }, 2600);
+  })();
   </script>
 </body>
 </html>
