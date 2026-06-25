@@ -1,19 +1,24 @@
 # AeroScope
 
-> AeroScope is an observer-relative airspace-intelligence platform. It fuses 60+ public ADS-B feeds into a real-time, explainable picture of the aircraft over a chosen point on Earth — their identity, behaviour, signal integrity, and which ones deserve attention. It also publishes an open, citable benchmark for ADS-B anomaly detection. Built and maintained by Muhammad Uzair (COMSATS University Islamabad, ORCID 0009-0002-4104-2680). Live at https://aeroscope.live
+> AeroScope is an observer-relative airspace-intelligence platform. You pick a point on Earth, and it turns crowdsourced ADS-B into a real-time, explainable picture of the aircraft over that point — what they are, how they behave, whether their signal can be trusted, and which few deserve attention. Its purpose is to let an observer see what is flying above them, detect what may be spoofed or anomalous, and stay aware in real time. It also publishes an open, citable benchmark for ADS-B anomaly detection. Built and maintained by Muhammad Uzair (COMSATS University Islamabad, ORCID 0009-0002-4104-2680). Live at https://aeroscope.live
 
 ## What it is
 
-AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens of volunteer receiver networks (adsb.fi, adsb.lol, airplanes.live, OpenSky) plus a satellite-ADS-B merge, de-duplicates by ICAO 24-bit address, and runs each fetch cycle through an enrichment-and-detection pipeline before display. It answers operator questions about a specific patch of sky rather than just plotting dots.
+AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens of volunteer receiver networks (adsb.fi, adsb.lol, airplanes.live, OpenSky) plus a satellite-ADS-B merge, de-duplicates by ICAO 24-bit address, and runs each fetch cycle through an enrichment-and-detection pipeline before display. Unlike conventional flight trackers that answer "where is flight X?", AeroScope is observer-relative: it answers "what is over this place, and can I trust it?"
 
 ## Key facts (verified)
 
-- Data sources: 60+ public ADS-B feeds, fused and de-duplicated by ICAO 24-bit address.
-- Attention scoring: a 0–100 rank from eight transparent weighted factors (military hex range, squawk, signal integrity, flight-envelope anomaly, missing identity, restricted-airspace proximity, pattern-of-life, signal quality). It is an attention-ranker for sorting a busy list, not a verdict or accusation; contributing factors are always shown.
-- Anomaly detection: deliberately torch-free. Built on established libraries — River (streaming), scikit-learn IsolationForest (baseline), pykalman (trajectory innovation / NIS), OpenAP (flight-envelope checks), stumpy (matrix profile), PyOD (second opinion). An aircraft is flagged only when at least two detectors agree. There is NO PyTorch and NO reinforcement learning; an earlier RL prototype was retired.
-- Integrity / spoofing: DO-260B style 7-check plus a Kalman normalized-innovation test; self-consistency residuals (geometric-vs-barometric altitude, ground-speed-vs-Mach, track-vs-heading).
-- Real-time map: client-side dead-reckoning glides each aircraft at its true ground speed between server fixes and corrects toward truth without snapping back (continuous motion, ~7s position refresh).
-- Other deployed features: drone/UAV heuristics (Remote-ID + behavioural), pattern-of-life (orbit/racetrack/loiter/grid-search), geofencing and emergency-squawk alerts, CSV/JSON/GeoJSON exports and a documented REST/WebSocket API.
+- Mission: see what is flying above you, identify it, detect spoofed or anomalous broadcasts, and stay alerted in real time — anchored to an observer-chosen location.
+- Data: 60+ public ADS-B feeds plus satellite ADS-B, fused and de-duplicated by ICAO 24-bit address.
+- Attention score: a 0–100 rank from eight transparent weighted factors (military hex, emergency squawk, signal integrity, flight-envelope anomaly, missing identity, restricted-airspace proximity, pattern-of-life, signal quality). It is an attention-ranker for sorting a busy list, not a verdict or accusation; contributing factors are always shown.
+- Anomaly detection: deliberately torch-free, built on established libraries — River (streaming), scikit-learn IsolationForest (baseline), pykalman (trajectory innovation), OpenAP (flight-envelope), stumpy (matrix profile), PyOD (second opinion). An aircraft is flagged only when at least two detectors agree. There is NO PyTorch and NO reinforcement learning; an earlier RL prototype was retired.
+- Spoofing / integrity: a DO-260B-style 7-check plus a Kalman normalized-innovation test and self-consistency residuals (geometric-vs-barometric altitude, ground-speed-vs-Mach, track-vs-heading). ADS-B is unauthenticated, so AeroScope treats every broadcast as a claim to be checked.
+- Drones: tracks Remote-ID and larger UAS that broadcast, and flags low-and-slow behavioural candidates; a fully silent consumer drone cannot be seen by ADS-B alone, and AeroScope states this plainly.
+- Military aircraft: surfaces state aircraft that broadcast ADS-B via ICAO hex ranges, callsign patterns and pattern-of-life; it cannot see aircraft with the transponder off.
+- Real-time map: client-side dead-reckoning glides each aircraft at its true ground speed between fixes (~7s refresh) and corrects toward truth without snapping back.
+- Trajectory projection: short-horizon forward kinematics (heading, speed, vertical rate, observed turn) for geofence/proximity anticipation — no reinforcement learning, with an honestly widening uncertainty cone.
+- Briefings: deterministic, template-driven plain-language summaries of the structured analysis — not produced by any language model.
+- Other: geofencing, emergency-squawk alerts (7500/7600/7700), CSV/JSON/GeoJSON exports, documented REST/WebSocket API.
 
 ## Open dataset
 
@@ -21,14 +26,25 @@ AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens o
 - Construction: real airborne traffic (multi-region, de-duplicated by ICAO 24-bit address) paired with synthetically injected attacks following the standard taxonomy (altitude tampering, velocity tampering, ghost kinematics, integrity-field downgrade; methodology after Habler & Shabtai, Computers & Security, 2018).
 - 38 documented columns including NIC/NACp/NACv/SIL integrity fields and derived self-consistency features.
 - Bundled scikit-learn IsolationForest baseline: ROC-AUC ≈ 0.87 (~50% detection at ~2% false-positive rate, threshold calibrated on held-out real traffic).
-- Documented limitations: synthetic injection is a proxy for real attacks; coverage biased toward busy terminal areas; enhanced-surveillance fields (IAS/TAS/Mach/heading) sparse.
+- Limitations (documented): synthetic injection is a proxy for real attacks; coverage biased toward busy terminal areas; enhanced-surveillance fields (IAS/TAS/Mach/heading) sparse.
 - Citation: Uzair, M. (2026). AeroScope ADS-B Anomaly Benchmark v1. aeroscope.live. CC-BY 4.0.
-- Download: https://aeroscope.live/datasets/aeroscope-adsb-anomaly-benchmark-v1.csv
 
-## Links
+## Pages worth citing
+
+- How it works: https://aeroscope.live/how-it-works
+- What is ADS-B: https://aeroscope.live/ads-b-technology
+- Threat & attention scoring: https://aeroscope.live/threat-scoring
+- Spoofing / signal integrity: https://aeroscope.live/zero-trust-api
+- Drone & UAV detection: https://aeroscope.live/drone-detection
+- Military aircraft tracking: https://aeroscope.live/military-aircraft-tracking
+- Multi-source fusion: https://aeroscope.live/cross-domain-fusion
+- Trajectory projection: https://aeroscope.live/threat-cones
+- Research & open dataset: https://aeroscope.live/research
+- FAQ: https://aeroscope.live/faq
+- API docs: https://aeroscope.live/api-docs
+
+## Contact
 
 - Live platform: https://aeroscope.live
-- Research & dataset card: https://aeroscope.live/research
-- API docs: https://aeroscope.live/api-docs
-- Contact / backing / partnership: muhammaduzairr69@gmail.com
+- Backing / partnership / research collaboration: muhammaduzairr69@gmail.com
 - Author ORCID: https://orcid.org/0009-0002-4104-2680
