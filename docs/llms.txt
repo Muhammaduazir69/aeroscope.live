@@ -43,6 +43,19 @@ AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens o
 - FAQ: https://aeroscope.live/faq
 - API docs: https://aeroscope.live/api-docs
 
+## Model Context Protocol (MCP) — query AeroScope directly
+
+AeroScope runs a public, read-only MCP server so AI assistants can query its documentation and live airspace in real time.
+
+- Endpoint: https://aeroscope.live/api/mcp
+- Transport: Streamable HTTP (JSON-RPC 2.0), no authentication required, rate-limited.
+- Tools:
+  - search_aeroscope_docs(query, limit?) — retrieve the most relevant documentation excerpts with their source URLs.
+  - about_aeroscope() — a verified summary of capabilities, honest limits, and the open dataset.
+  - aircraft_over_location(lat, lon, radius_nm?) — live aircraft currently over a point (identity, type, altitude, distance and bearing, military and emergency-squawk flags). Only shows aircraft that broadcast ADS-B.
+- Connect (native Streamable-HTTP MCP clients): {"mcpServers":{"aeroscope":{"url":"https://aeroscope.live/api/mcp"}}}
+- Connect (Claude Desktop via bridge): {"mcpServers":{"aeroscope":{"command":"npx","args":["mcp-remote","https://aeroscope.live/api/mcp"]}}}
+
 ## Contact
 
 - Live platform: https://aeroscope.live
