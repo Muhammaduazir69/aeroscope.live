@@ -28,6 +28,7 @@ AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens o
 - Bundled scikit-learn IsolationForest baseline: ROC-AUC ≈ 0.87 (~50% detection at ~2% false-positive rate, threshold calibrated on held-out real traffic).
 - Limitations (documented): synthetic injection is a proxy for real attacks; coverage biased toward busy terminal areas; enhanced-surveillance fields (IAS/TAS/Mach/heading) sparse.
 - Citation: Uzair, M. (2026). AeroScope ADS-B Anomaly Benchmark v1. aeroscope.live. CC-BY 4.0.
+- Also published on Hugging Face Datasets: https://huggingface.co/datasets/Muhammaduazir69/aeroscope-adsb-anomaly-benchmark (load with datasets.load_dataset). A Zenodo DOI is being minted.
 
 ## Pages worth citing
 
