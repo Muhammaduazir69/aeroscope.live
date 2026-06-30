@@ -34,6 +34,7 @@ AeroScope ingests aircraft positions broadcast on 1090 MHz (ADS-B) from dozens o
 - How it works: https://aeroscope.live/how-it-works
 - What is ADS-B: https://aeroscope.live/ads-b-technology
 - Threat & attention scoring: https://aeroscope.live/threat-scoring
+- ADS-B security (complete attacks reference): https://aeroscope.live/ads-b-security/
 - Spoofing / signal integrity: https://aeroscope.live/zero-trust-api
 - Drone & UAV detection: https://aeroscope.live/drone-detection
 - Military aircraft tracking: https://aeroscope.live/military-aircraft-tracking
