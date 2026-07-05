@@ -24,6 +24,11 @@
   <meta name="twitter:title" content="AeroScope — Observer-Relative Airspace Intelligence"/>
   <meta name="twitter:description" content="Real-time airspace intelligence from 60+ ADS-B feeds + an open anomaly-detection benchmark. Built on established libraries, no torch, no RL."/>
   <meta name="twitter:image" content="https://aeroscope.live/og-image.png"/>
+  <meta property="og:video" content="https://aeroscope.live/media/aeroscope-3d.mp4"/>
+  <meta property="og:video:secure_url" content="https://aeroscope.live/media/aeroscope-3d.mp4"/>
+  <meta property="og:video:type" content="video/mp4"/>
+  <meta property="og:video:width" content="740"/>
+  <meta property="og:video:height" content="720"/>
 
   <link rel="icon" type="image/x-icon" href="https://aeroscope.live/favicon.ico"/>
   <link rel="icon" type="image/png" sizes="32x32" href="https://aeroscope.live/favicon-32x32.png"/>
@@ -155,6 +160,13 @@
     .showcase .bar .u{margin-left:14px;font-family:var(--mono);font-size:12px;color:var(--faint)}
     .showcase img{display:block;width:100%;height:auto}
     .showcase .cap{padding:16px 20px;font-family:var(--mono);font-size:12px;color:var(--muted);border-top:1px solid var(--line);text-align:center}
+    .showvid{display:flex;justify-content:center;padding:28px 20px 20px;background:radial-gradient(ellipse 80% 70% at 50% 26%, rgba(154,123,255,0.12), transparent 62%)}
+    .showvid video{width:100%;max-width:540px;height:auto;border-radius:12px;box-shadow:0 22px 60px rgba(0,0,0,0.55);background:#0b1220}
+    .filmstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:2px 20px 22px}
+    .filmstrip figure{margin:0}
+    .filmstrip img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block;background:#0b1220}
+    .filmstrip figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
+    @media(max-width:640px){.filmstrip{grid-template-columns:1fr;max-width:320px;margin:0 auto}}
 
     /* ── PIPELINE ── */
     .pipe{display:flex;gap:0;flex-wrap:wrap;justify-content:center;align-items:stretch;margin-top:36px}
@@ -314,11 +326,20 @@
     <div class="wrap">
       <div class="reveal"><div class="kicker">The platform, live</div>
       <h2 class="h2">A surveillance console, not a map of dots</h2>
-      <p class="lead2">Each fetch cycle runs raw positions through an enrichment-and-detection pipeline before anything reaches the screen.</p></div>
+      <p class="lead2">Each fetch cycle runs raw positions through an enrichment-and-detection pipeline before anything reaches the screen — then renders the result as a live 3D instrument view of the sky above you.</p></div>
       <div class="showcase reveal">
-        <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u mono">aeroscope.live</span></div>
-        <img src="aeroscope-dashboard.png" alt="AeroScope live console showing tracked aircraft, threat scores and analysis panels over a chosen area" loading="lazy"/>
-        <div class="cap">Live console — tracked aircraft, attention scores, integrity flags and pattern analysis over an observer-chosen area.</div>
+        <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="u mono">aeroscope.live · 3D airspace</span></div>
+        <div class="showvid">
+          <video src="https://aeroscope.live/media/aeroscope-3d.mp4" poster="https://aeroscope.live/media/aeroscope-3d-poster.png"
+                 autoplay muted loop playsinline preload="metadata" width="740" height="720"
+                 aria-label="AeroScope 3D airspace instrument HUD: a live radar dome and an animated altitude histogram of the aircraft overhead"></video>
+        </div>
+        <div class="filmstrip reveal">
+          <figure><img src="https://aeroscope.live/media/hero-dome.png" alt="3D radar dome plotting nearby aircraft by bearing, distance and altitude" loading="lazy"/><figcaption>Radar dome</figcaption></figure>
+          <figure><img src="https://aeroscope.live/media/hero-bars.png" alt="3D altitude histogram of aircraft counts per altitude band" loading="lazy"/><figcaption>Altitude bars</figcaption></figure>
+          <figure><img src="https://aeroscope.live/media/hero-globe.png" alt="Situational globe with connection arcs to notable contacts" loading="lazy"/><figcaption>Situational globe</figcaption></figure>
+        </div>
+        <div class="cap">A live 3D instrument HUD over your position — radar dome, altitude histogram and a drag-to-explore situational globe, rendered client-side with three.js.</div>
       </div>
     </div>
   </section>
